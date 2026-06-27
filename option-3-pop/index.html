@@ -1,0 +1,563 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Aura Daily — Skin &amp; Gut Renewal Complex</title>
+<meta name="description" content="Aura Daily — Skin & Gut Renewal Complex. Pick your supply, unlock free gifts, check out securely." />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600;700&family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+<style>
+  :root{
+    --cream:#FFF6EC;
+    --card:#FFFCF7;
+    --coral:#FF5A47;
+    --coral-dark:#E8412E;
+    --tangerine:#FF9F1C;
+    --lime:#16C79A;
+    --lime-dark:#0FA37D;
+    --ink:#1E1A2B;
+    --ink-soft:#6A6478;
+    --line:#F0E5D6;
+    --shadow:0 14px 0 rgba(30,26,43,.06);
+    --pop:0 10px 30px rgba(255,90,71,.28);
+    --r-lg:30px;
+    --r-md:22px;
+    --r-sm:14px;
+    --maxw:1180px;
+  }
+  *{box-sizing:border-box;}
+  html,body{max-width:100%;overflow-x:hidden;}
+  body{
+    margin:0;
+    font-family:"Poppins",system-ui,-apple-system,sans-serif;
+    background:
+      radial-gradient(900px 500px at 12% -8%, rgba(255,159,28,.16), transparent 60%),
+      radial-gradient(800px 480px at 100% 8%, rgba(22,199,154,.14), transparent 55%),
+      var(--cream);
+    color:var(--ink);
+    line-height:1.5;
+    -webkit-font-smoothing:antialiased;
+  }
+  h1,h2,h3{font-family:"Fredoka",sans-serif;font-weight:600;line-height:1.04;margin:0;text-wrap:balance;}
+  p{margin:0;}
+  a{color:inherit;}
+  img{max-width:100%;}
+  .wrap{max-width:var(--maxw);margin:0 auto;padding:20px clamp(16px,4vw,40px);}
+
+  /* ---------- top promo bar ---------- */
+  .promo{
+    background:var(--ink);color:#fff;text-align:center;
+    font-size:13px;font-weight:600;letter-spacing:.04em;
+    padding:10px 16px;display:flex;gap:10px;justify-content:center;align-items:center;flex-wrap:wrap;
+  }
+  .promo b{color:var(--tangerine);}
+
+  /* ---------- header ---------- */
+  header.nav{display:flex;align-items:center;justify-content:space-between;gap:16px;padding-top:18px;padding-bottom:6px;}
+  .brand{display:flex;align-items:center;gap:11px;font-family:"Fredoka";font-weight:700;font-size:22px;letter-spacing:-.01em;}
+  .brand .dot{
+    width:38px;height:38px;border-radius:50%;display:grid;place-items:center;color:#fff;font-size:20px;
+    background:conic-gradient(from 210deg,var(--coral),var(--tangerine),var(--lime),var(--coral));
+    box-shadow:0 6px 16px rgba(255,90,71,.35);
+  }
+  .nav-right{display:flex;align-items:center;gap:14px;font-size:13px;font-weight:600;color:var(--ink-soft);}
+  .nav-right .live{display:inline-flex;align-items:center;gap:7px;}
+  .blip{width:9px;height:9px;border-radius:50%;background:var(--lime);box-shadow:0 0 0 0 rgba(22,199,154,.6);animation:blip 1.8s infinite;}
+  @keyframes blip{0%{box-shadow:0 0 0 0 rgba(22,199,154,.5);}70%{box-shadow:0 0 0 10px rgba(22,199,154,0);}100%{box-shadow:0 0 0 0 rgba(22,199,154,0);}}
+
+  /* ---------- grid ---------- */
+  .grid{display:grid;grid-template-columns:1fr;gap:26px;align-items:start;}
+  @media(min-width:980px){.grid{grid-template-columns:0.92fr 1.08fr;gap:34px;}}
+
+  /* ---------- left: product panel ---------- */
+  .panel-left{position:relative;}
+  @media(min-width:980px){.panel-left{position:sticky;top:18px;}}
+  .hero-card{
+    background:linear-gradient(160deg,#FFE7C2,#FFD9D2 60%,#CFF3E7);
+    border-radius:var(--r-lg);padding:26px 26px 22px;position:relative;overflow:hidden;
+    border:2px solid #fff;box-shadow:0 22px 50px rgba(30,26,43,.10);
+  }
+  .hero-card::after{content:"";position:absolute;width:220px;height:220px;border-radius:50%;
+    background:radial-gradient(circle,rgba(255,255,255,.55),transparent 70%);top:-70px;right:-50px;}
+  .badge-rating{
+    display:inline-flex;align-items:center;gap:8px;background:#fff;border-radius:999px;
+    padding:7px 14px;font-size:13px;font-weight:700;box-shadow:0 6px 14px rgba(30,26,43,.10);position:relative;z-index:2;
+  }
+  .stars{color:var(--tangerine);letter-spacing:1px;}
+  .hero-card h1{font-size:clamp(30px,5vw,42px);margin:16px 0 8px;position:relative;z-index:2;letter-spacing:-.02em;}
+  .hero-card .sub{font-size:15px;color:#5b4a3a;font-weight:500;max-width:34ch;position:relative;z-index:2;}
+  .bottle{
+    margin:18px auto 6px;width:170px;height:210px;position:relative;z-index:2;
+    display:grid;place-items:center;filter:drop-shadow(0 22px 22px rgba(30,26,43,.18));
+    animation:float 5s ease-in-out infinite;
+  }
+  @keyframes float{0%,100%{transform:translateY(0) rotate(-1deg);}50%{transform:translateY(-12px) rotate(1deg);}}
+  .ingredients{display:flex;flex-wrap:wrap;gap:8px;margin-top:18px;position:relative;z-index:2;}
+  .chip{background:rgba(255,255,255,.78);border:1.5px solid #fff;border-radius:999px;padding:6px 12px;font-size:12.5px;font-weight:600;color:#4a3b2e;}
+
+  .guarantee{
+    margin-top:16px;display:flex;gap:14px;align-items:center;background:var(--card);
+    border:2px dashed var(--lime);border-radius:var(--r-md);padding:14px 16px;
+  }
+  .guarantee .g-ico{font-size:30px;line-height:1;}
+  .guarantee b{font-family:"Fredoka";font-size:17px;}
+  .guarantee span{font-size:13px;color:var(--ink-soft);}
+
+  .testimonial{
+    margin-top:16px;background:var(--card);border:1.5px solid var(--line);border-radius:var(--r-md);padding:16px 18px;
+  }
+  .testimonial .q{font-size:14.5px;font-weight:500;color:#3b3548;}
+  .t-meta{display:flex;align-items:center;gap:10px;margin-top:12px;}
+  .avatar{width:38px;height:38px;border-radius:50%;background:linear-gradient(135deg,var(--coral),var(--tangerine));color:#fff;font-weight:700;display:grid;place-items:center;font-size:15px;font-family:"Fredoka";}
+  .t-name{font-size:13px;font-weight:700;}
+  .verified{font-size:11.5px;color:var(--lime-dark);font-weight:700;display:inline-flex;align-items:center;gap:4px;}
+
+  /* ---------- right: offer panel ---------- */
+  .section-eyebrow{display:inline-flex;align-items:center;gap:8px;font-size:12px;font-weight:800;letter-spacing:.12em;text-transform:uppercase;color:var(--coral);background:#fff;border-radius:999px;padding:6px 14px;box-shadow:0 5px 12px rgba(255,90,71,.16);}
+  .right-h2{font-size:clamp(24px,4vw,32px);margin:14px 0 4px;letter-spacing:-.01em;}
+  .right-h2 .hl{color:var(--coral);}
+  .right-sub{color:var(--ink-soft);font-size:14px;margin-bottom:18px;}
+
+  .tiers{display:flex;flex-direction:column;gap:14px;}
+  .tier{
+    position:relative;display:block;cursor:pointer;background:var(--card);
+    border:2.5px solid var(--line);border-radius:var(--r-md);padding:18px 18px 18px 56px;
+    transition:transform .18s cubic-bezier(.34,1.56,.64,1), border-color .18s, box-shadow .18s, background .18s;
+  }
+  .tier:hover{transform:translateY(-3px) scale(1.012);border-color:#FFD0A1;box-shadow:0 16px 28px rgba(30,26,43,.10);}
+  .tier input{position:absolute;opacity:0;pointer-events:none;}
+  .tick{
+    position:absolute;left:18px;top:50%;transform:translateY(-50%);
+    width:24px;height:24px;border-radius:50%;border:2.5px solid #D9CDBC;background:#fff;
+    display:grid;place-items:center;transition:.2s;
+  }
+  .tick svg{width:13px;height:13px;opacity:0;transform:scale(.4);transition:.2s;}
+  .tier-top{display:flex;align-items:baseline;justify-content:space-between;gap:12px;flex-wrap:wrap;}
+  .tier-name{font-family:"Fredoka";font-size:19px;font-weight:600;}
+  .tier-bottles{font-size:12.5px;color:var(--ink-soft);font-weight:600;margin-top:1px;}
+  .tier-price{text-align:right;}
+  .tier-price .now{font-family:"Fredoka";font-size:24px;font-weight:700;font-variant-numeric:tabular-nums;}
+  .tier-price .was{font-size:13px;color:var(--ink-soft);text-decoration:line-through;margin-right:6px;}
+  .tier-bottom{display:flex;align-items:center;justify-content:space-between;gap:10px;margin-top:10px;flex-wrap:wrap;}
+  .perbottle{font-size:12.5px;color:var(--ink-soft);font-weight:600;}
+  .save-pill{background:var(--lime);color:#fff;font-size:12px;font-weight:800;border-radius:999px;padding:4px 11px;letter-spacing:.02em;}
+
+  /* selected state */
+  .tier.selected{border-color:var(--tangerine);background:#FFFDF6;box-shadow:0 18px 36px rgba(255,159,28,.20);}
+  .tier.selected .tick{background:var(--lime);border-color:var(--lime);}
+  .tier.selected .tick svg{opacity:1;transform:scale(1);}
+  .tier.pop{animation:pop .42s cubic-bezier(.34,1.56,.64,1);}
+  @keyframes pop{0%{transform:scale(1);}40%{transform:scale(1.04);}100%{transform:scale(1);}}
+
+  /* sticker badges */
+  .sticker{
+    position:absolute;top:-13px;right:16px;font-size:11px;font-weight:800;letter-spacing:.06em;
+    color:#fff;padding:6px 12px;border-radius:999px;box-shadow:0 8px 16px rgba(30,26,43,.18);
+    transform:rotate(-4deg);z-index:3;border:2px solid #fff;
+  }
+  .sticker.popular{background:var(--coral);}
+  .sticker.value{background:linear-gradient(120deg,var(--tangerine),var(--coral));}
+
+  /* ---------- gifts ---------- */
+  .gifts-card{background:var(--card);border:2px solid var(--line);border-radius:var(--r-md);padding:20px;margin-top:22px;}
+  .gifts-head{display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap;margin-bottom:6px;}
+  .gifts-head h3{font-size:19px;display:flex;align-items:center;gap:8px;}
+  .gift-total{font-family:"Fredoka";font-weight:700;font-size:15px;color:var(--lime-dark);background:#E5FAF2;border-radius:999px;padding:6px 13px;font-variant-numeric:tabular-nums;}
+  .progress-wrap{margin:14px 0 18px;}
+  .progress{height:14px;background:#EFE6D8;border-radius:999px;overflow:hidden;position:relative;}
+  .progress-bar{height:100%;width:0;border-radius:999px;background:linear-gradient(90deg,var(--lime),var(--tangerine));transition:width .5s cubic-bezier(.34,1.4,.64,1);}
+  .progress-cap{font-size:12px;color:var(--ink-soft);font-weight:600;margin-top:7px;}
+
+  .gift-list{display:grid;grid-template-columns:1fr;gap:10px;}
+  @media(min-width:540px){.gift-list{grid-template-columns:1fr 1fr;}}
+  .gift{
+    display:flex;align-items:center;gap:12px;border:1.5px solid var(--line);border-radius:var(--r-sm);
+    padding:12px;background:#fff;transition:.3s;position:relative;
+  }
+  .gift .g-emoji{font-size:24px;width:42px;height:42px;display:grid;place-items:center;border-radius:12px;background:#FBF1E2;flex-shrink:0;transition:.3s;}
+  .gift .g-name{font-size:13.5px;font-weight:700;line-height:1.2;}
+  .gift .g-req{font-size:11.5px;color:var(--ink-soft);font-weight:600;margin-top:2px;}
+  .gift .g-val{font-size:12px;font-weight:800;color:var(--ink-soft);margin-left:auto;flex-shrink:0;}
+  .gift.locked{opacity:.5;filter:grayscale(.4);}
+  .gift.locked .g-emoji{background:#EEE7DD;}
+  .gift.unlocked{border-color:var(--lime);background:#F4FDF9;}
+  .gift.unlocked .g-emoji{background:#D9F7EC;}
+  .gift.unlocked .g-val{color:var(--lime-dark);}
+  .gift.unlocked .g-req{color:var(--lime-dark);}
+  .gift .lock-ico{margin-left:auto;flex-shrink:0;font-size:14px;}
+  .gift.just-unlocked{animation:pop .5s cubic-bezier(.34,1.56,.64,1);}
+
+  /* ---------- order summary ---------- */
+  .summary{
+    background:var(--ink);color:#fff;border-radius:var(--r-lg);padding:24px;margin-top:22px;position:relative;overflow:hidden;
+    box-shadow:0 24px 50px rgba(30,26,43,.30);
+  }
+  .summary::before{content:"";position:absolute;width:260px;height:260px;border-radius:50%;background:radial-gradient(circle,rgba(255,159,28,.22),transparent 70%);top:-90px;left:-60px;}
+  .summary h3{color:#fff;font-size:20px;margin-bottom:14px;position:relative;z-index:2;}
+  .s-row{display:flex;justify-content:space-between;align-items:baseline;gap:12px;font-size:14px;padding:8px 0;position:relative;z-index:2;border-bottom:1px solid rgba(255,255,255,.09);}
+  .s-row .lbl{color:#C9C3D8;font-weight:500;}
+  .s-row .val{font-weight:700;font-variant-numeric:tabular-nums;}
+  .s-row .val.free{color:var(--lime);}
+  .s-total{display:flex;justify-content:space-between;align-items:baseline;margin-top:14px;position:relative;z-index:2;}
+  .s-total .lbl{font-family:"Fredoka";font-size:20px;font-weight:600;}
+  .s-total .val{font-family:"Fredoka";font-size:34px;font-weight:700;font-variant-numeric:tabular-nums;}
+  .savebar{
+    margin-top:14px;background:linear-gradient(120deg,var(--lime),var(--lime-dark));
+    border-radius:var(--r-sm);padding:11px 16px;font-weight:800;font-size:14.5px;text-align:center;position:relative;z-index:2;
+    display:flex;align-items:center;justify-content:center;gap:8px;
+  }
+  .cta{
+    display:flex;align-items:center;justify-content:center;gap:10px;width:100%;margin-top:16px;
+    background:linear-gradient(120deg,var(--coral),var(--coral-dark));color:#fff;border:none;cursor:pointer;
+    font-family:"Fredoka";font-weight:600;font-size:19px;padding:18px;border-radius:18px;
+    box-shadow:var(--pop);transition:transform .15s cubic-bezier(.34,1.56,.64,1), box-shadow .15s;position:relative;z-index:2;
+  }
+  .cta:hover{transform:translateY(-2px) scale(1.015);box-shadow:0 16px 38px rgba(255,90,71,.45);}
+  .cta:active{transform:translateY(0) scale(.99);}
+  .cta .arrow{transition:transform .2s;}
+  .cta:hover .arrow{transform:translateX(5px);}
+  .secure-line{display:flex;align-items:center;justify-content:center;gap:7px;margin-top:12px;font-size:12px;color:#B8B2C7;position:relative;z-index:2;}
+
+  /* ---------- payment chips ---------- */
+  .pays{display:flex;flex-wrap:wrap;gap:8px;justify-content:center;margin-top:16px;}
+  .pay{font-size:11px;font-weight:800;letter-spacing:.04em;background:#fff;border:1.5px solid var(--line);color:#3b3548;border-radius:9px;padding:7px 11px;box-shadow:0 3px 8px rgba(30,26,43,.05);}
+  .pay.applepay{background:var(--ink);color:#fff;border-color:var(--ink);}
+  .pay.paypal{color:#1B3D8F;}
+  .pay.visa{color:#1A1F71;}
+  .pay.mc{color:#C8421B;}
+  .pay.amex{color:#1063B8;}
+
+  .mini-trust{display:flex;flex-wrap:wrap;gap:18px;justify-content:center;margin-top:18px;font-size:12.5px;font-weight:600;color:var(--ink-soft);}
+  .mini-trust span{display:inline-flex;align-items:center;gap:6px;}
+
+  footer{text-align:center;padding:30px 16px 38px;color:var(--ink-soft);font-size:13px;font-weight:500;}
+  footer b{color:var(--ink);font-weight:700;}
+
+  :focus-visible{outline:3px solid var(--tangerine);outline-offset:3px;border-radius:6px;}
+
+  @media (prefers-reduced-motion:reduce){
+    *{animation:none!important;transition:none!important;}
+  }
+</style>
+</head>
+<body>
+
+  <div class="promo">🎉 LIMITED DROP &nbsp;·&nbsp; Free gifts auto-unlock with your supply &nbsp;·&nbsp; <b>Up to 52% OFF today</b></div>
+
+  <div class="wrap">
+    <header class="nav">
+      <div class="brand"><span class="dot" aria-hidden="true">✦</span>Aura&nbsp;Daily</div>
+      <div class="nav-right">
+        <span class="live"><span class="blip" aria-hidden="true"></span><span id="viewers">214</span> viewing now</span>
+      </div>
+    </header>
+
+    <div class="grid">
+
+      <!-- ============ LEFT ============ -->
+      <section class="panel-left" aria-label="Product overview">
+        <div class="hero-card">
+          <span class="badge-rating"><span class="stars" aria-hidden="true">★★★★★</span> 4.9 · <span style="color:var(--ink-soft)">12,418 reviews</span></span>
+          <h1>Aura Daily</h1>
+          <p class="sub" style="font-family:'Fredoka';font-size:17px;color:#7a3d2f;margin-top:2px;font-weight:500;">Skin &amp; Gut Renewal Complex</p>
+          <div class="bottle" role="img" aria-label="Aura Daily supplement bottle">
+            <svg viewBox="0 0 170 210" width="170" height="210" aria-hidden="true">
+              <rect x="62" y="2" width="46" height="22" rx="7" fill="#1E1A2B"/>
+              <rect x="56" y="22" width="58" height="16" rx="6" fill="#FF9F1C"/>
+              <rect x="40" y="38" width="90" height="168" rx="30" fill="#FF5A47"/>
+              <rect x="40" y="38" width="90" height="168" rx="30" fill="url(#g1)"/>
+              <rect x="52" y="78" width="66" height="96" rx="16" fill="#FFF6EC"/>
+              <circle cx="85" cy="108" r="17" fill="none" stroke="#16C79A" stroke-width="4"/>
+              <path d="M85 100 v16 M77 108 h16" stroke="#16C79A" stroke-width="4" stroke-linecap="round"/>
+              <rect x="60" y="134" width="50" height="6" rx="3" fill="#1E1A2B" opacity=".5"/>
+              <rect x="66" y="146" width="38" height="5" rx="2.5" fill="#1E1A2B" opacity=".28"/>
+              <defs>
+                <linearGradient id="g1" x1="0" y1="0" x2="1" y2="1">
+                  <stop offset="0" stop-color="#fff" stop-opacity=".25"/>
+                  <stop offset="1" stop-color="#fff" stop-opacity="0"/>
+                </linearGradient>
+              </defs>
+            </svg>
+          </div>
+          <div class="ingredients">
+            <span class="chip">🌿 Marine Collagen</span>
+            <span class="chip">🦠 12B CFU Probiotics</span>
+            <span class="chip">✨ Hyaluronic Acid</span>
+            <span class="chip">🍊 Vitamin C + Zinc</span>
+          </div>
+        </div>
+
+        <div class="guarantee">
+          <span class="g-ico" aria-hidden="true">🛡️</span>
+          <div>
+            <b>60-Day Money-Back Guarantee</b><br />
+            <span>Glow up or get a full refund — no questions, no hassle.</span>
+          </div>
+        </div>
+
+        <figure class="testimonial">
+          <p class="q">"Three weeks in and my skin is clearer than it's been in years — and zero bloat. This is the only supplement I've actually re-ordered."</p>
+          <figcaption class="t-meta">
+            <span class="avatar" aria-hidden="true">JM</span>
+            <div>
+              <div class="t-name">Jordan M.</div>
+              <span class="verified">✔ Verified Buyer</span>
+            </div>
+          </figcaption>
+        </figure>
+      </section>
+
+      <!-- ============ RIGHT ============ -->
+      <section aria-label="Choose your supply and check out">
+        <span class="section-eyebrow">Step 1 · Pick your supply</span>
+        <h2 class="right-h2">Bundle up &amp; <span class="hl">unlock free gifts</span> 🎁</h2>
+        <p class="right-sub">The bigger your supply, the more you save — and the more gifts auto-unlock. Cancel anytime.</p>
+
+        <form class="tiers" id="tiers">
+          <!-- 1 month -->
+          <label class="tier" data-tier="1">
+            <input type="radio" name="supply" value="1" />
+            <span class="tick" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none"><path d="M4 12l5 5L20 6" stroke="#fff" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+            <div class="tier-top">
+              <div>
+                <div class="tier-name">1-Month Supply</div>
+                <div class="tier-bottles">1 bottle</div>
+              </div>
+              <div class="tier-price"><span class="was">$49.95</span><span class="now">$39.95</span></div>
+            </div>
+            <div class="tier-bottom">
+              <span class="perbottle">$39.95 / bottle</span>
+              <span class="save-pill">SAVE 20%</span>
+            </div>
+          </label>
+
+          <!-- 3 month -->
+          <label class="tier" data-tier="3">
+            <span class="sticker popular" aria-hidden="true">🔥 MOST POPULAR</span>
+            <input type="radio" name="supply" value="3" checked />
+            <span class="tick" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none"><path d="M4 12l5 5L20 6" stroke="#fff" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+            <div class="tier-top">
+              <div>
+                <div class="tier-name">3-Month Supply</div>
+                <div class="tier-bottles">3 bottles</div>
+              </div>
+              <div class="tier-price"><span class="was">$149.85</span><span class="now">$80.85</span></div>
+            </div>
+            <div class="tier-bottom">
+              <span class="perbottle">$26.95 / bottle</span>
+              <span class="save-pill">SAVE 46%</span>
+            </div>
+          </label>
+
+          <!-- 6 month -->
+          <label class="tier" data-tier="6">
+            <span class="sticker value" aria-hidden="true">💎 BEST VALUE</span>
+            <input type="radio" name="supply" value="6" />
+            <span class="tick" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none"><path d="M4 12l5 5L20 6" stroke="#fff" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+            <div class="tier-top">
+              <div>
+                <div class="tier-name">6-Month Supply</div>
+                <div class="tier-bottles">6 bottles</div>
+              </div>
+              <div class="tier-price"><span class="was">$299.70</span><span class="now">$143.70</span></div>
+            </div>
+            <div class="tier-bottom">
+              <span class="perbottle">$23.95 / bottle</span>
+              <span class="save-pill">SAVE 52%</span>
+            </div>
+          </label>
+        </form>
+
+        <!-- gifts -->
+        <div class="gifts-card">
+          <div class="gifts-head">
+            <h3>🎁 Free gifts unlocked</h3>
+            <span class="gift-total" id="giftTotal">$0 in gifts</span>
+          </div>
+          <div class="progress-wrap">
+            <div class="progress"><div class="progress-bar" id="progressBar"></div></div>
+            <div class="progress-cap" id="progressCap">Add more bottles to unlock more gifts ✨</div>
+          </div>
+          <div class="gift-list" id="giftList">
+            <div class="gift" data-min="1" data-val="19">
+              <span class="g-emoji" aria-hidden="true">📘</span>
+              <div><div class="g-name">Glow Guide eBook</div><div class="g-req">Unlocks at 1+ bottle</div></div>
+              <span class="g-val">$19</span>
+            </div>
+            <div class="gift" data-min="3" data-val="9.95">
+              <span class="g-emoji" aria-hidden="true">🚚</span>
+              <div><div class="g-name">Priority Shipping</div><div class="g-req">Unlocks at 3+ bottles</div></div>
+              <span class="g-val">$9.95</span>
+            </div>
+            <div class="gift" data-min="3" data-val="24">
+              <span class="g-emoji" aria-hidden="true">🎀</span>
+              <div><div class="g-name">Mystery Gift</div><div class="g-req">Unlocks at 3+ bottles</div></div>
+              <span class="g-val">$24</span>
+            </div>
+            <div class="gift" data-min="6" data-val="34">
+              <span class="g-emoji" aria-hidden="true">🧴</span>
+              <div><div class="g-name">Travel Serum</div><div class="g-req">Unlocks at 6+ bottles</div></div>
+              <span class="g-val">$34</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- summary -->
+        <div class="summary" aria-live="polite">
+          <h3>🧾 Your order</h3>
+          <div class="s-row"><span class="lbl" id="planLabel">3-Month Supply (3 bottles)</span><span class="val" id="planPrice">$80.85</span></div>
+          <div class="s-row"><span class="lbl">Free gifts</span><span class="val free" id="sGifts">+$33.95 FREE</span></div>
+          <div class="s-row"><span class="lbl">Shipping</span><span class="val free">FREE</span></div>
+          <div class="s-total"><span class="lbl">Total</span><span class="val" id="sTotal">$80.85</span></div>
+          <div class="savebar" id="saveBar">🎉 You save $102.95 today!</div>
+          <button class="cta" id="checkout" type="button">Complete Secure Checkout <span class="arrow" aria-hidden="true">→</span></button>
+          <div class="secure-line">🔒 256-bit encrypted · You won't be charged in this demo</div>
+        </div>
+
+        <div class="pays" aria-label="Accepted payment methods">
+          <span class="pay visa">VISA</span>
+          <span class="pay mc">MASTERCARD</span>
+          <span class="pay amex">AMEX</span>
+          <span class="pay paypal">PayPal</span>
+          <span class="pay applepay"> Apple Pay</span>
+        </div>
+
+        <div class="mini-trust">
+          <span>⭐ 4.9 / 5 from 12,418</span>
+          <span>♻️ 60-day refund</span>
+          <span>🌱 Vegan &amp; clean</span>
+          <span>🚫 No auto-billing</span>
+        </div>
+      </section>
+    </div>
+  </div>
+
+  <footer>
+    Built by <b>Muhammad Umer Afzal</b> · Demo only — no real payment is processed.
+  </footer>
+
+<script>
+  (function(){
+    "use strict";
+    var DATA = {
+      "1":{ name:"1-Month Supply", bottles:1, price:39.95, was:49.95 },
+      "3":{ name:"3-Month Supply", bottles:3, price:80.85, was:149.85 },
+      "6":{ name:"6-Month Supply", bottles:6, price:143.70, was:299.70 }
+    };
+    var MAX_BOTTLES = 6;
+
+    var tiers       = Array.prototype.slice.call(document.querySelectorAll(".tier"));
+    var radios      = Array.prototype.slice.call(document.querySelectorAll('input[name="supply"]'));
+    var gifts       = Array.prototype.slice.call(document.querySelectorAll(".gift"));
+    var giftTotalEl = document.getElementById("giftTotal");
+    var progressBar = document.getElementById("progressBar");
+    var progressCap = document.getElementById("progressCap");
+    var planLabel   = document.getElementById("planLabel");
+    var planPrice   = document.getElementById("planPrice");
+    var sGifts      = document.getElementById("sGifts");
+    var sTotal      = document.getElementById("sTotal");
+    var saveBar     = document.getElementById("saveBar");
+    var checkoutBtn = document.getElementById("checkout");
+
+    function money(n){ return "$" + n.toFixed(2); }
+    function moneyShort(n){ return Number.isInteger(n) ? "$"+n : "$"+n.toFixed(2); }
+
+    function render(bottles, animateGifts){
+      var d = DATA[String(bottles)];
+      if(!d){ return; }
+
+      // tier visual state
+      tiers.forEach(function(t){
+        var isSel = parseInt(t.getAttribute("data-tier"),10) === bottles;
+        t.classList.toggle("selected", isSel);
+      });
+
+      // gifts
+      var giftValue = 0;
+      gifts.forEach(function(g){
+        var min = parseInt(g.getAttribute("data-min"),10);
+        var val = parseFloat(g.getAttribute("data-val"));
+        var unlocked = bottles >= min;
+        var wasUnlocked = g.classList.contains("unlocked");
+        g.classList.toggle("unlocked", unlocked);
+        g.classList.toggle("locked", !unlocked);
+
+        // swap lock icon / value emphasis
+        var valEl = g.querySelector(".g-val");
+        var reqEl = g.querySelector(".g-req");
+        if(unlocked){
+          giftValue += val;
+          valEl.textContent = "FREE";
+          reqEl.textContent = "✓ Unlocked";
+          if(animateGifts && !wasUnlocked){
+            g.classList.remove("just-unlocked");
+            void g.offsetWidth;
+            g.classList.add("just-unlocked");
+          }
+        } else {
+          valEl.textContent = moneyShort(val);
+          reqEl.textContent = "🔒 Unlocks at " + min + "+ bottle" + (min>1?"s":"");
+        }
+      });
+
+      // gift total + progress
+      giftTotalEl.textContent = moneyShort(Math.round(giftValue*100)/100) + " in gifts";
+      var pct = Math.min(100, Math.round((bottles / MAX_BOTTLES) * 100));
+      progressBar.style.width = pct + "%";
+      if(bottles >= MAX_BOTTLES){
+        progressCap.textContent = "🏆 Every gift unlocked — you maxed it out!";
+      } else if(bottles >= 3){
+        progressCap.textContent = "So close! Go 6-month to unlock the Travel Serum 🧴";
+      } else {
+        progressCap.textContent = "Go 3-month to unlock 2 more gifts 🎀";
+      }
+
+      // summary
+      planLabel.textContent = d.name + " (" + d.bottles + " bottle" + (d.bottles>1?"s":"") + ")";
+      planPrice.textContent = money(d.price);
+      sGifts.textContent = "+" + money(giftValue) + " FREE";
+      sTotal.textContent = money(d.price);
+
+      var savings = (d.was - d.price) + giftValue;
+      saveBar.textContent = "🎉 You save " + money(savings) + " today!";
+    }
+
+    radios.forEach(function(r){
+      r.addEventListener("change", function(){
+        var bottles = parseInt(r.value,10);
+        // pop animation on the chosen card
+        var card = r.closest(".tier");
+        if(card){
+          card.classList.remove("pop");
+          void card.offsetWidth;
+          card.classList.add("pop");
+        }
+        render(bottles, true);
+      });
+    });
+
+    // keyboard: allow clicking label updates radio natively; ensure render on label click too
+    checkoutBtn.addEventListener("click", function(){
+      var sel = document.querySelector('input[name="supply"]:checked');
+      var d = DATA[sel ? sel.value : "3"];
+      alert("✅ Demo checkout\n\nPlan: " + d.name + " (" + d.bottles + " bottles)\nTotal: " + money(d.price) + "\n\nThis is a portfolio demo — no real payment is processed.");
+    });
+
+    // simulate live viewer count for energy
+    var viewersEl = document.getElementById("viewers");
+    if(viewersEl){
+      setInterval(function(){
+        var base = 214 + Math.floor(Math.random()*22) - 6;
+        viewersEl.textContent = base;
+      }, 3200);
+    }
+
+    // initial (preselected 3-month), no entrance animation
+    var initial = document.querySelector('input[name="supply"]:checked');
+    render(initial ? parseInt(initial.value,10) : 3, false);
+  })();
+</script>
+</body>
+</html>
