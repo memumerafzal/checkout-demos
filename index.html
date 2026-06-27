@@ -13,7 +13,24 @@
   *{box-sizing:border-box;margin:0;padding:0}
   body{font-family:"Sora",-apple-system,Segoe UI,Roboto,sans-serif;background:
     radial-gradient(1200px 600px at 50% -10%,#1b1d2b 0%,var(--bg) 60%);color:var(--ink);min-height:100vh}
-  .wrap{max-width:1040px;margin:0 auto;padding:56px 20px 70px}
+  .wrap{max-width:1040px;margin:0 auto;padding:24px 20px 70px}
+
+  /* brand bar */
+  .brandbar{display:flex;align-items:center;justify-content:space-between;gap:14px;
+    padding:14px 18px;background:rgba(23,25,34,.7);border:1px solid var(--line);
+    border-radius:14px;backdrop-filter:blur(6px);margin-bottom:40px}
+  .who{display:flex;align-items:center;gap:12px;min-width:0}
+  .mark{width:42px;height:42px;border-radius:11px;flex-shrink:0;display:grid;place-items:center;
+    font-weight:800;font-size:16px;color:#fff;letter-spacing:.02em;
+    background:linear-gradient(135deg,#7c3aed,#06b6d4)}
+  .who .nm{font-weight:800;font-size:15px;line-height:1.2}
+  .who .role{color:var(--muted);font-size:12px;line-height:1.3}
+  .visit{flex-shrink:0;display:inline-flex;align-items:center;gap:7px;text-decoration:none;
+    background:#fff;color:#16181f;font-weight:700;font-size:13px;padding:10px 16px;border-radius:999px;
+    transition:transform .12s,opacity .12s}
+  .visit:hover{transform:translateY(-1px);opacity:.92}
+  @media(max-width:560px){.who .role{display:none}.brandbar{padding:12px 14px}}
+
   header{text-align:center;margin-bottom:14px}
   .kick{font-size:12px;letter-spacing:.28em;text-transform:uppercase;color:var(--accent);font-weight:700}
   h1{font-size:clamp(28px,5vw,44px);font-weight:800;line-height:1.1;margin:14px 0 12px}
@@ -44,8 +61,19 @@
 </head>
 <body>
   <div class="wrap">
+    <div class="brandbar">
+      <div class="who">
+        <div class="mark">UA</div>
+        <div>
+          <div class="nm">Umer Afzal</div>
+          <div class="role">DevOps Engineer &amp; Cloud Solutions Architect</div>
+        </div>
+      </div>
+      <a class="visit" href="https://umerdevops.uk" target="_blank" rel="noopener">Visit my portfolio ↗</a>
+    </div>
+
     <header>
-      <div class="kick">Design Concepts</div>
+      <div class="kick">Design Concepts · by Umer Afzal</div>
       <h1>Checkout / Offers Page — Pick a Direction</h1>
       <p class="lead">Four different design styles, same offer & functionality (supply tiers, unlocking free gifts, live order summary). Open each, click around, and tell me which look you’d like — then I’ll build the real one around your product.</p>
     </header>
@@ -102,7 +130,10 @@
     </div>
 
     <p class="note">All concepts use a sample product (“Aura Daily”) so we’re comparing the design, not the content.<br>Once you pick one, I’ll rebuild it with your real product, gifts, and checkout link.</p>
-    <footer>Prepared by Muhammad Umer Afzal · Demo concepts — no real payment is processed.</footer>
+    <footer>
+      Designed &amp; built by <strong>Umer Afzal</strong> — DevOps Engineer &amp; Cloud Solutions Architect<br>
+      <a href="https://umerdevops.uk" target="_blank" rel="noopener">umerdevops.uk</a> · Demo concepts — no real payment is processed.
+    </footer>
   </div>
 </body>
 </html>
