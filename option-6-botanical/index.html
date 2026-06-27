@@ -1,0 +1,645 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Aura Daily — Skin & Gut Renewal Complex</title>
+<meta name="description" content="Aura Daily — Skin & Gut Renewal Complex. A clean botanical wellness checkout." />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,500&family=Nunito+Sans:opsz,wght@6..12,400;6..12,600;6..12,700;6..12,800&display=swap" rel="stylesheet" />
+<style>
+  :root{
+    --kraft:#cdbfa3;
+    --kraft-deep:#bfae8f;
+    --cream:#f6f1e7;
+    --cream-soft:#efe7d6;
+    --sage:#6f7d5e;
+    --sage-deep:#4e5a40;
+    --terracotta:#b5613f;
+    --terracotta-deep:#9a4e30;
+    --ink:#3a3026;
+    --ink-soft:#6a5e4d;
+    --gold:#a8853f;
+    --line:#d8cdb4;
+    --shadow:0 18px 40px -24px rgba(58,48,38,.55);
+    --radius:18px;
+    --radius-sm:13px;
+  }
+
+  *{box-sizing:border-box;}
+  html,body{max-width:100%;overflow-x:hidden;}
+  body{
+    margin:0;
+    font-family:"Nunito Sans",system-ui,sans-serif;
+    color:var(--ink);
+    background-color:var(--kraft);
+    background-image:
+      radial-gradient(circle at 18% 12%, rgba(255,255,255,.35), transparent 38%),
+      radial-gradient(circle at 85% 88%, rgba(111,125,94,.18), transparent 42%),
+      url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.06'/%3E%3C/svg%3E");
+    line-height:1.55;
+    -webkit-font-smoothing:antialiased;
+  }
+
+  .wrap{max-width:1120px;margin:0 auto;padding:clamp(18px,4vw,40px) clamp(16px,4vw,32px) 0;}
+
+  /* ---------- top bar ---------- */
+  .topbar{
+    display:flex;align-items:center;justify-content:space-between;gap:14px;
+    flex-wrap:wrap;
+    padding-bottom:22px;border-bottom:1px solid var(--line);
+  }
+  .brand{display:flex;align-items:center;gap:11px;}
+  .brand .mark{
+    width:40px;height:40px;flex:none;color:var(--sage-deep);
+    background:var(--cream);border:1px solid var(--line);border-radius:50%;
+    display:grid;place-items:center;box-shadow:var(--shadow);
+  }
+  .brand .name{font-family:"Fraunces",serif;font-weight:600;font-size:1.15rem;letter-spacing:.5px;}
+  .brand .name small{display:block;font-family:"Nunito Sans",sans-serif;font-weight:600;
+    font-size:.6rem;letter-spacing:.32em;text-transform:uppercase;color:var(--ink-soft);}
+  .topbar .secure{
+    display:inline-flex;align-items:center;gap:7px;font-size:.78rem;font-weight:700;
+    color:var(--sage-deep);background:rgba(246,241,231,.7);
+    border:1px solid var(--line);padding:7px 13px;border-radius:999px;
+  }
+
+  /* ---------- hero ---------- */
+  .hero{text-align:center;padding:clamp(30px,6vw,52px) 0 8px;position:relative;}
+  .eyebrow{
+    font-size:.7rem;font-weight:700;letter-spacing:.34em;text-transform:uppercase;
+    color:var(--terracotta);display:inline-flex;align-items:center;gap:12px;
+  }
+  .eyebrow::before,.eyebrow::after{content:"";width:34px;height:1px;background:var(--terracotta);opacity:.5;}
+  h1{
+    font-family:"Fraunces",serif;font-weight:600;
+    font-size:clamp(2.1rem,6.5vw,3.7rem);line-height:1.02;letter-spacing:-.5px;
+    margin:.42em auto .18em;max-width:14ch;text-wrap:balance;
+  }
+  h1 em{font-style:italic;color:var(--sage-deep);}
+  .subtitle{max-width:48ch;margin:0 auto;color:var(--ink-soft);font-size:1.02rem;}
+  .rating{
+    display:inline-flex;align-items:center;gap:10px;margin-top:18px;
+    background:var(--cream);border:1px solid var(--line);border-radius:999px;
+    padding:8px 17px;box-shadow:var(--shadow);font-size:.88rem;
+  }
+  .stars{color:var(--terracotta);letter-spacing:1px;font-size:.92rem;}
+  .rating b{font-weight:800;}
+  .rating .muted{color:var(--ink-soft);}
+
+  .sprig-row{display:flex;justify-content:center;margin:18px 0 4px;color:var(--sage);opacity:.7;}
+
+  /* ---------- layout grid ---------- */
+  .layout{
+    display:grid;grid-template-columns:1fr;gap:24px;
+    padding:14px 0 60px;
+  }
+  @media(min-width:920px){
+    .layout{grid-template-columns:1.55fr 1fr;align-items:start;gap:34px;}
+  }
+
+  /* ---------- card shell ---------- */
+  .panel{
+    background:var(--cream);border:1px solid var(--line);border-radius:var(--radius);
+    box-shadow:var(--shadow);padding:clamp(18px,3.4vw,28px);position:relative;
+  }
+  .panel-head{display:flex;align-items:baseline;justify-content:space-between;gap:10px;margin-bottom:6px;}
+  .panel-head h2{
+    font-family:"Fraunces",serif;font-weight:600;font-size:1.32rem;margin:0;letter-spacing:-.2px;
+  }
+  .panel-head .step{
+    font-size:.66rem;font-weight:800;letter-spacing:.22em;text-transform:uppercase;
+    color:var(--sage-deep);background:var(--cream-soft);border:1px solid var(--line);
+    padding:5px 10px;border-radius:999px;
+  }
+  .panel-sub{color:var(--ink-soft);font-size:.9rem;margin:0 0 18px;}
+
+  /* ---------- tiers ---------- */
+  .tiers{display:flex;flex-direction:column;gap:14px;}
+  .tier{
+    position:relative;cursor:pointer;display:grid;
+    grid-template-columns:auto 1fr auto;align-items:center;gap:16px;
+    background:#fbf8f1;border:1.5px solid var(--line);border-radius:var(--radius-sm);
+    padding:18px 18px;transition:border-color .25s ease, box-shadow .25s ease, transform .25s ease, background .25s ease;
+  }
+  .tier:hover{border-color:var(--sage);transform:translateY(-2px);}
+  .tier:focus-within{outline:2px solid var(--sage);outline-offset:3px;}
+  .tier.selected{
+    border-color:var(--sage-deep);background:#fff;
+    box-shadow:0 0 0 1.5px var(--sage-deep), var(--shadow);
+  }
+  .tier input{position:absolute;opacity:0;width:1px;height:1px;}
+  .dot{
+    width:22px;height:22px;border-radius:50%;border:2px solid var(--kraft-deep);
+    flex:none;display:grid;place-items:center;transition:border-color .25s ease;
+  }
+  .tier.selected .dot{border-color:var(--sage-deep);}
+  .dot::after{content:"";width:11px;height:11px;border-radius:50%;background:var(--sage-deep);
+    transform:scale(0);transition:transform .22s cubic-bezier(.3,1.4,.5,1);}
+  .tier.selected .dot::after{transform:scale(1);}
+  .tier-main .t-name{font-family:"Fraunces",serif;font-weight:600;font-size:1.12rem;line-height:1.1;}
+  .tier-main .t-meta{font-size:.82rem;color:var(--ink-soft);margin-top:2px;}
+  .perbottle{font-size:.78rem;color:var(--sage-deep);font-weight:700;margin-top:5px;display:inline-block;}
+  .tier-price{text-align:right;white-space:nowrap;}
+  .tier-price .now{font-family:"Fraunces",serif;font-weight:600;font-size:1.32rem;
+    font-variant-numeric:tabular-nums;display:block;}
+  .tier-price .was{font-size:.82rem;color:var(--ink-soft);text-decoration:line-through;}
+  .tier-price .save{
+    display:inline-block;margin-top:4px;font-size:.68rem;font-weight:800;letter-spacing:.04em;
+    color:var(--terracotta-deep);background:rgba(181,97,63,.12);
+    border-radius:999px;padding:3px 9px;
+  }
+  .ribbon{
+    position:absolute;top:-11px;left:18px;
+    font-size:.6rem;font-weight:800;letter-spacing:.16em;text-transform:uppercase;
+    color:#fff;background:var(--terracotta);padding:5px 12px;border-radius:999px;
+    box-shadow:0 6px 14px -6px rgba(154,78,48,.8);
+  }
+  .ribbon.best{background:var(--sage-deep);}
+
+  @media(max-width:430px){
+    .tier{grid-template-columns:auto 1fr;gap:12px;row-gap:10px;}
+    .tier-price{grid-column:1 / -1;text-align:left;border-top:1px dashed var(--line);padding-top:10px;}
+    .tier-price .now{display:inline;margin-right:10px;}
+  }
+
+  /* ---------- gifts ---------- */
+  .gifts-panel{margin-top:24px;}
+  .gift-track-meta{
+    display:flex;align-items:center;justify-content:space-between;gap:10px;
+    background:linear-gradient(100deg,rgba(168,133,63,.14),rgba(111,125,94,.12));
+    border:1px solid var(--line);border-radius:var(--radius-sm);
+    padding:12px 16px;margin-bottom:16px;flex-wrap:wrap;
+  }
+  .gift-track-meta .lbl{font-size:.74rem;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--ink-soft);}
+  .gift-track-meta .val{font-family:"Fraunces",serif;font-weight:700;font-size:1.18rem;color:var(--gold);}
+  .gift-track-meta .val span{font-size:.8rem;color:var(--ink-soft);font-family:"Nunito Sans",sans-serif;font-weight:600;}
+  .gifts{display:grid;grid-template-columns:1fr 1fr;gap:12px;}
+  @media(max-width:520px){.gifts{grid-template-columns:1fr;}}
+  .gift{
+    display:flex;align-items:center;gap:12px;
+    background:#fbf8f1;border:1px solid var(--line);border-radius:12px;padding:12px 13px;
+    transition:opacity .3s ease, background .3s ease, border-color .3s ease, transform .3s ease;
+  }
+  .gift .g-ico{font-size:1.25rem;flex:none;width:34px;height:34px;border-radius:9px;
+    background:var(--cream-soft);display:grid;place-items:center;}
+  .gift .g-name{font-weight:700;font-size:.9rem;line-height:1.15;}
+  .gift .g-req{font-size:.74rem;color:var(--ink-soft);}
+  .gift .g-val{margin-left:auto;font-weight:800;font-size:.8rem;color:var(--gold);white-space:nowrap;}
+  .gift.locked{opacity:.5;filter:grayscale(.35);}
+  .gift.locked .g-val{color:var(--ink-soft);}
+  .gift.unlocked{border-color:var(--sage);background:#fff;}
+  .gift.unlocked .g-name::after{content:" ✓";color:var(--sage-deep);font-weight:800;}
+  .gift.just-unlocked{animation:pop .5s ease;}
+  @keyframes pop{0%{transform:scale(.96);}45%{transform:scale(1.03);}100%{transform:scale(1);}}
+
+  /* ---------- summary ---------- */
+  .summary{position:relative;}
+  @media(min-width:920px){.summary{position:sticky;top:20px;}}
+  .summary::before,.summary::after{
+    /* deckled apothecary-receipt edges */
+    content:"";position:absolute;left:14px;right:14px;height:7px;
+    background:radial-gradient(circle at 6px -3px, transparent 6px, var(--cream) 6px) repeat-x;
+    background-size:14px 7px;
+  }
+  .summary::before{top:-6px;}
+  .summary::after{bottom:-6px;transform:rotate(180deg);}
+  .sum-title{
+    font-family:"Fraunces",serif;font-weight:600;font-size:1.3rem;margin:0 0 3px;
+    display:flex;align-items:center;gap:9px;
+  }
+  .sum-sub{font-size:.74rem;letter-spacing:.18em;text-transform:uppercase;color:var(--ink-soft);margin:0 0 16px;}
+  .rule{height:1px;background:repeating-linear-gradient(90deg,var(--line) 0 6px,transparent 6px 11px);margin:14px 0;}
+  .line{display:flex;justify-content:space-between;align-items:baseline;gap:12px;font-size:.94rem;margin:9px 0;}
+  .line .k{color:var(--ink-soft);}
+  .line .v{font-weight:700;font-variant-numeric:tabular-nums;}
+  .line.free .v{color:var(--sage-deep);}
+  .line .sub{display:block;font-size:.74rem;color:var(--ink-soft);font-weight:600;}
+  #giftLines .line .k{display:flex;align-items:center;gap:7px;}
+  .total{display:flex;justify-content:space-between;align-items:baseline;margin-top:6px;}
+  .total .k{font-family:"Fraunces",serif;font-weight:600;font-size:1.18rem;}
+  .total .v{font-family:"Fraunces",serif;font-weight:700;font-size:1.95rem;
+    font-variant-numeric:tabular-nums;letter-spacing:-.5px;}
+  .savings{
+    text-align:center;margin-top:12px;padding:10px;border-radius:11px;
+    background:rgba(181,97,63,.12);color:var(--terracotta-deep);
+    font-weight:800;font-size:.95rem;letter-spacing:.01em;
+  }
+  .savings b{font-size:1.05rem;}
+
+  .checkout-btn{
+    width:100%;margin-top:18px;cursor:pointer;border:none;
+    font-family:"Fraunces",serif;font-weight:600;font-size:1.08rem;letter-spacing:.2px;
+    color:#fdfaf3;background:linear-gradient(180deg,var(--terracotta),var(--terracotta-deep));
+    padding:17px 20px;border-radius:13px;
+    box-shadow:0 14px 26px -12px rgba(154,78,48,.9);
+    transition:transform .18s ease, box-shadow .18s ease, filter .18s ease;
+    display:flex;align-items:center;justify-content:center;gap:9px;
+  }
+  .checkout-btn:hover{transform:translateY(-2px);filter:brightness(1.04);box-shadow:0 20px 32px -14px rgba(154,78,48,.95);}
+  .checkout-btn:active{transform:translateY(0);}
+  .checkout-btn:focus-visible{outline:3px solid var(--sage-deep);outline-offset:3px;}
+
+  .pay-note{display:flex;align-items:center;justify-content:center;gap:7px;
+    font-size:.78rem;color:var(--ink-soft);margin-top:11px;}
+  .chips{display:flex;flex-wrap:wrap;gap:7px;justify-content:center;margin-top:13px;}
+  .chip{
+    font-size:.62rem;font-weight:800;letter-spacing:.06em;
+    border:1px solid var(--line);background:#fbf8f1;color:var(--ink-soft);
+    padding:5px 9px;border-radius:7px;
+  }
+
+  /* ---------- trust ---------- */
+  .trust{
+    display:grid;gap:16px;grid-template-columns:1fr;
+    margin:10px 0 6px;
+  }
+  @media(min-width:700px){.trust{grid-template-columns:1.2fr 1fr;}}
+  .guarantee{
+    display:flex;align-items:center;gap:16px;
+    background:var(--cream);border:1px solid var(--line);border-radius:var(--radius);
+    box-shadow:var(--shadow);padding:20px 22px;
+  }
+  .guarantee .seal{
+    flex:none;width:64px;height:64px;border-radius:50%;
+    border:2px dashed var(--sage);display:grid;place-items:center;color:var(--sage-deep);
+    font-family:"Fraunces",serif;font-weight:700;font-size:.62rem;text-align:center;line-height:1.05;
+  }
+  .guarantee .seal b{font-size:1.35rem;display:block;}
+  .guarantee h3{font-family:"Fraunces",serif;font-weight:600;margin:0 0 3px;font-size:1.1rem;}
+  .guarantee p{margin:0;font-size:.86rem;color:var(--ink-soft);}
+  .testimonial{
+    background:var(--cream);border:1px solid var(--line);border-radius:var(--radius);
+    box-shadow:var(--shadow);padding:20px 22px;position:relative;
+  }
+  .testimonial .stars{font-size:.9rem;}
+  .testimonial blockquote{margin:8px 0 12px;font-family:"Fraunces",serif;font-style:italic;
+    font-size:1.02rem;line-height:1.45;color:var(--ink);}
+  .testimonial .who{display:flex;align-items:center;gap:10px;font-size:.82rem;}
+  .testimonial .av{width:34px;height:34px;border-radius:50%;background:var(--sage);color:#fff;
+    display:grid;place-items:center;font-weight:800;font-family:"Fraunces",serif;flex:none;}
+  .testimonial .who b{display:block;}
+  .testimonial .who span{color:var(--ink-soft);}
+  .verified{color:var(--sage-deep);font-weight:800;}
+
+  /* ---------- footer ---------- */
+  footer{
+    text-align:center;padding:30px 16px 40px;color:var(--ink-soft);font-size:.82rem;
+    border-top:1px solid var(--line);margin-top:34px;
+  }
+  footer .fsprig{display:flex;justify-content:center;color:var(--sage);opacity:.6;margin-bottom:12px;}
+  footer a{color:var(--terracotta-deep);text-decoration:none;font-weight:700;}
+  footer a:hover{text-decoration:underline;}
+  footer .demo{display:block;margin-top:5px;font-size:.74rem;opacity:.85;}
+
+  @media(prefers-reduced-motion:reduce){
+    *{animation:none!important;transition:none!important;}
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <!-- top bar -->
+  <header class="topbar">
+    <div class="brand">
+      <span class="mark" aria-hidden="true">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M12 21c0-7 0-10 0-10"/>
+          <path d="M12 13c-3 0-6-1.6-6-5 3 0 6 1.6 6 5z"/>
+          <path d="M12 10c2.4-2 6-1.6 6-1.6 0 3-3.6 4-6 1.6z"/>
+        </svg>
+      </span>
+      <span class="name">Aura<small>Botanical Apothecary</small></span>
+    </div>
+    <span class="secure">
+      <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="4" y="10" width="16" height="11" rx="2"/><path d="M8 10V7a4 4 0 0 1 8 0v3"/></svg>
+      Secure 256-bit checkout
+    </span>
+  </header>
+
+  <!-- hero -->
+  <section class="hero">
+    <span class="eyebrow">Clean · Vegan · Third-party tested</span>
+    <h1>Aura Daily — <em>Skin &amp; Gut</em> Renewal Complex</h1>
+    <p class="subtitle">A botanical probiotic + ceramide blend that calms the gut and brings back a lit-from-within glow — in one daily capsule.</p>
+    <div class="rating" role="img" aria-label="Rated 4.9 out of 5 from 12,418 reviews">
+      <span class="stars" aria-hidden="true">★★★★★</span>
+      <span><b>4.9</b> <span class="muted">· 12,418 verified reviews</span></span>
+    </div>
+    <div class="sprig-row" aria-hidden="true">
+      <svg width="120" height="22" viewBox="0 0 120 22" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round">
+        <path d="M2 11h44"/><path d="M118 11H74"/>
+        <path d="M60 4c-4 3-4 11 0 14 4-3 4-11 0-14z" fill="currentColor" fill-opacity=".18"/>
+        <path d="M52 8c-3-1-7 0-7 0s2 4 5 4 2-4 2-4z" fill="currentColor" fill-opacity=".18"/>
+        <path d="M68 14c3 1 7 0 7 0s-2-4-5-4-2 4-2 4z" fill="currentColor" fill-opacity=".18"/>
+      </svg>
+    </div>
+  </section>
+
+  <!-- main layout -->
+  <div class="layout">
+
+    <!-- LEFT: selection -->
+    <div>
+      <section class="panel" aria-labelledby="tierHead">
+        <div class="panel-head">
+          <h2 id="tierHead">Choose your supply</h2>
+          <span class="step">Step 1 of 2</span>
+        </div>
+        <p class="panel-sub">Bigger supply, deeper savings — and more free botanical gifts unlock as you go.</p>
+
+        <form class="tiers" id="tierForm">
+          <!-- 1 month -->
+          <label class="tier" data-tier="1">
+            <input type="radio" name="tier" value="1" />
+            <span class="dot" aria-hidden="true"></span>
+            <span class="tier-main">
+              <span class="t-name">1-Month Supply</span>
+              <span class="t-meta">1 bottle · 30-day course</span>
+              <span class="perbottle">$39.95 / bottle</span>
+            </span>
+            <span class="tier-price">
+              <span class="now">$39.95</span>
+              <span class="was">$49.95</span>
+              <span class="save">Save 20%</span>
+            </span>
+          </label>
+
+          <!-- 3 month -->
+          <label class="tier" data-tier="3">
+            <span class="ribbon">Most Popular</span>
+            <input type="radio" name="tier" value="3" checked />
+            <span class="dot" aria-hidden="true"></span>
+            <span class="tier-main">
+              <span class="t-name">3-Month Supply</span>
+              <span class="t-meta">3 bottles · 90-day course</span>
+              <span class="perbottle">$26.95 / bottle</span>
+            </span>
+            <span class="tier-price">
+              <span class="now">$80.85</span>
+              <span class="was">$149.85</span>
+              <span class="save">Save 46%</span>
+            </span>
+          </label>
+
+          <!-- 6 month -->
+          <label class="tier" data-tier="6">
+            <span class="ribbon best">Best Value</span>
+            <input type="radio" name="tier" value="6" />
+            <span class="dot" aria-hidden="true"></span>
+            <span class="tier-main">
+              <span class="t-name">6-Month Supply</span>
+              <span class="t-meta">6 bottles · 180-day course</span>
+              <span class="perbottle">$23.95 / bottle</span>
+            </span>
+            <span class="tier-price">
+              <span class="now">$143.70</span>
+              <span class="was">$299.70</span>
+              <span class="save">Save 52%</span>
+            </span>
+          </label>
+        </form>
+      </section>
+
+      <!-- gifts -->
+      <section class="panel gifts-panel" aria-labelledby="giftHead">
+        <div class="panel-head">
+          <h2 id="giftHead">Free botanical gifts</h2>
+          <span class="step">Auto-applied</span>
+        </div>
+        <p class="panel-sub">No codes needed — these are added to your order the moment you qualify.</p>
+
+        <div class="gift-track-meta">
+          <span class="lbl">Gifts unlocked</span>
+          <span class="val"><span id="giftCountTxt">2 of 4</span> · $<span id="giftSumTop">52</span> <span>in free gifts</span></span>
+        </div>
+
+        <div class="gifts" id="giftGrid">
+          <div class="gift" data-min="1" data-val="19">
+            <span class="g-ico" aria-hidden="true">📖</span>
+            <span><span class="g-name">Glow Guide eBook</span><br><span class="g-req"></span></span>
+            <span class="g-val">$19</span>
+          </div>
+          <div class="gift" data-min="3" data-val="9.95">
+            <span class="g-ico" aria-hidden="true">🚚</span>
+            <span><span class="g-name">Priority Shipping</span><br><span class="g-req"></span></span>
+            <span class="g-val">$9.95</span>
+          </div>
+          <div class="gift" data-min="3" data-val="24">
+            <span class="g-ico" aria-hidden="true">🎁</span>
+            <span><span class="g-name">Mystery Gift</span><br><span class="g-req"></span></span>
+            <span class="g-val">$24</span>
+          </div>
+          <div class="gift" data-min="6" data-val="34">
+            <span class="g-ico" aria-hidden="true">🌿</span>
+            <span><span class="g-name">Travel Serum</span><br><span class="g-req"></span></span>
+            <span class="g-val">$34</span>
+          </div>
+        </div>
+      </section>
+
+      <!-- trust -->
+      <div class="trust">
+        <div class="guarantee">
+          <span class="seal" aria-hidden="true"><b>60</b>day<br>promise</span>
+          <div>
+            <h3>60-Day Money-Back Guarantee</h3>
+            <p>Try Aura Daily risk-free. Don’t love your results? Send it back — even the empty bottles — for a full refund.</p>
+          </div>
+        </div>
+        <div class="testimonial">
+          <span class="stars" aria-hidden="true">★★★★★</span>
+          <blockquote>“Three months in and my skin is calmer than it’s been in years. The bloating is just… gone. I won’t go a day without it.”</blockquote>
+          <div class="who">
+            <span class="av" aria-hidden="true">M</span>
+            <span><b>Mara L.</b><span><span class="verified">✓ Verified buyer</span> · 3-Month Supply</span></span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- RIGHT: order summary -->
+    <aside class="panel summary" aria-labelledby="sumHead" aria-live="polite">
+      <div class="sum-title" id="sumHead">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--sage-deep)" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 2h9l3 3v17l-2-1.2L14 22l-2-1.2L10 22l-3-1.2L4 22V2z" fill="rgba(111,125,94,.12)"/><path d="M8 8h7M8 12h7M8 16h4"/></svg>
+        Your order
+      </div>
+      <p class="sum-sub">Botanical apothecary receipt</p>
+
+      <div class="line">
+        <span class="k" id="planName">3-Month Supply <span class="sub">3 bottles · $26.95 / bottle</span></span>
+        <span class="v" id="planPrice">$80.85</span>
+      </div>
+
+      <div id="giftLines"></div>
+
+      <div class="line free">
+        <span class="k">Shipping</span>
+        <span class="v" id="shipLine">FREE</span>
+      </div>
+
+      <div class="rule"></div>
+
+      <div class="total">
+        <span class="k">Total today</span>
+        <span class="v" id="totalPrice">$80.85</span>
+      </div>
+
+      <div class="savings">You save <b id="saveAmt">$69.00</b> today</div>
+
+      <button class="checkout-btn" id="checkoutBtn" type="button">
+        Complete Secure Checkout
+        <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+      </button>
+
+      <div class="pay-note">
+        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="4" y="10" width="16" height="11" rx="2"/><path d="M8 10V7a4 4 0 0 1 8 0v3"/></svg>
+        Encrypted &amp; secure. We never store card details.
+      </div>
+      <div class="chips" aria-label="Accepted payment methods">
+        <span class="chip">VISA</span>
+        <span class="chip">MASTERCARD</span>
+        <span class="chip">AMEX</span>
+        <span class="chip">PAYPAL</span>
+        <span class="chip">APPLE&nbsp;PAY</span>
+      </div>
+    </aside>
+
+  </div><!-- /layout -->
+</div><!-- /wrap -->
+
+<footer>
+  <div class="fsprig" aria-hidden="true">
+    <svg width="90" height="18" viewBox="0 0 90 18" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round">
+      <path d="M45 2v14"/><path d="M45 7c-3-2-7-2-7-2s1 4 4 4 3-2 3-2z" fill="currentColor" fill-opacity=".2"/>
+      <path d="M45 11c3-2 7-2 7-2s-1 4-4 4-3-2-3-2z" fill="currentColor" fill-opacity=".2"/>
+    </svg>
+  </div>
+  Built by <a href="https://umerdevops.uk" target="_blank" rel="noopener">Umer Afzal · umerdevops.uk</a>
+  <span class="demo">Demo only — no real payment is processed.</span>
+</footer>
+
+<script>
+(function(){
+  "use strict";
+
+  // Per-tier data: bottles, current price, was price, per-bottle
+  var TIERS = {
+    "1": {name:"1-Month Supply", bottles:1, price:39.95, was:49.95, per:39.95},
+    "3": {name:"3-Month Supply", bottles:3, price:80.85, was:149.85, per:26.95},
+    "6": {name:"6-Month Supply", bottles:6, price:143.70, was:299.70, per:23.95}
+  };
+
+  var GIFTS = [
+    {name:"Glow Guide eBook", min:1, val:19},
+    {name:"Priority Shipping", min:3, val:9.95},
+    {name:"Mystery Gift",     min:3, val:24},
+    {name:"Travel Serum",     min:6, val:34}
+  ];
+
+  var fmt = function(n){ return "$" + n.toFixed(2); };
+  var fmtInt = function(n){ return Number.isInteger(n) ? String(n) : n.toFixed(2); };
+
+  var tiers    = document.querySelectorAll(".tier");
+  var giftEls  = document.querySelectorAll("#giftGrid .gift");
+  var giftLines= document.getElementById("giftLines");
+
+  // set the locked-requirement text once
+  giftEls.forEach(function(el){
+    var min = parseInt(el.getAttribute("data-min"),10);
+    el.querySelector(".g-req").textContent = min + "+ bottle" + (min>1?"s":"") + " to unlock";
+  });
+
+  var prevUnlocked = {}; // track for pop animation
+
+  function render(bottles){
+    var t = TIERS[String(bottles)];
+
+    // ---- tier card selected state ----
+    tiers.forEach(function(card){
+      var sel = card.getAttribute("data-tier") === String(bottles);
+      card.classList.toggle("selected", sel);
+      var input = card.querySelector("input");
+      input.checked = sel;
+    });
+
+    // ---- gifts ----
+    var unlockedVal = 0, unlockedCount = 0;
+    var lineHTML = "";
+    giftEls.forEach(function(el){
+      var min = parseInt(el.getAttribute("data-min"),10);
+      var val = parseFloat(el.getAttribute("data-val"));
+      var on  = bottles >= min;
+      var req = el.querySelector(".g-req");
+
+      el.classList.toggle("unlocked", on);
+      el.classList.toggle("locked", !on);
+
+      if(on){
+        unlockedVal += val; unlockedCount++;
+        req.textContent = "Unlocked — yours free";
+        // pop only when newly unlocked
+        if(!prevUnlocked[min+"-"+val]){
+          el.classList.add("just-unlocked");
+          setTimeout((function(node){return function(){node.classList.remove("just-unlocked");};})(el),520);
+        }
+        lineHTML += '<div class="line free"><span class="k">🎁 '
+          + el.querySelector(".g-name").textContent
+          + '</span><span class="v">+' + fmt(val) + ' FREE</span></div>';
+      } else {
+        var prefix = "🔒";
+        req.textContent = "Unlock at " + min + "+ bottle" + (min>1?"s":"");
+      }
+      prevUnlocked[min+"-"+val] = on;
+    });
+
+    giftLines.innerHTML = lineHTML;
+
+    document.getElementById("giftCountTxt").textContent = unlockedCount + " of " + GIFTS.length;
+    document.getElementById("giftSumTop").textContent  = fmtInt(unlockedVal);
+
+    // ---- summary ----
+    document.getElementById("planName").innerHTML =
+      t.name + ' <span class="sub">' + t.bottles + ' bottle' + (t.bottles>1?"s":"")
+      + ' · ' + fmt(t.per) + ' / bottle</span>';
+    document.getElementById("planPrice").textContent = fmt(t.price);
+    document.getElementById("totalPrice").textContent = fmt(t.price);
+
+    // savings = (was - price) + unlocked gift value
+    var savings = (t.was - t.price) + unlockedVal;
+    document.getElementById("saveAmt").textContent = fmt(savings);
+  }
+
+  // wire up selection
+  document.getElementById("tierForm").addEventListener("change", function(e){
+    if(e.target && e.target.name === "tier"){
+      render(parseInt(e.target.value,10));
+    }
+  });
+  // allow keyboard / click on whole label (labels already toggle the radio,
+  // but ensure render fires even if change doesn't bubble in edge cases)
+  tiers.forEach(function(card){
+    card.addEventListener("click", function(){
+      render(parseInt(card.getAttribute("data-tier"),10));
+    });
+  });
+
+  // checkout demo
+  document.getElementById("checkoutBtn").addEventListener("click", function(){
+    var bottles = document.querySelector('input[name="tier"]:checked').value;
+    var t = TIERS[bottles];
+    alert("This is a demo checkout — no real payment is processed.\n\n"
+      + t.name + " (" + t.bottles + " bottles)\nTotal today: " + fmt(t.price)
+      + "\n\nThank you for trying Aura Daily 🌿");
+  });
+
+  // initial paint — 3-month preselected.
+  // seed prevUnlocked so the initial 2 gifts don't pop on load
+  prevUnlocked = {"1-19":true, "3-9.95":true};
+  render(3);
+})();
+</script>
+</body>
+</html>

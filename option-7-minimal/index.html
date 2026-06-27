@@ -1,0 +1,555 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+<title>Aura Daily — Skin &amp; Gut Renewal Complex</title>
+<meta name="description" content="Aura Daily — Skin & Gut Renewal Complex. Choose your supply, unlock free gifts, checkout securely. Demo only." />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;450;500;600;700&display=swap" rel="stylesheet" />
+<style>
+  :root{
+    --paper:#ffffff;
+    --panel:#fafaf9;
+    --ink:#0a0a0b;
+    --body:#1d1d1f;
+    --muted:#6e6e73;
+    --faint:#8e8e93;
+    --line:#e7e6e3;
+    --line-strong:#d8d7d3;
+    --accent:#2e6be6;
+    --accent-ink:#1f4fb0;
+    --accent-wash:#f1f5fe;
+    --good:#1a7f56;
+    --shadow:0 1px 2px rgba(10,10,11,.04), 0 8px 30px rgba(10,10,11,.05);
+    --radius:14px;
+    --maxw:760px;
+    font-synthesis-weight:none;
+    -webkit-text-size-adjust:100%;
+  }
+  *{box-sizing:border-box;}
+  html,body{max-width:100%;overflow-x:hidden;}
+  body{
+    margin:0;
+    background:var(--paper);
+    color:var(--body);
+    font-family:"Inter",-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;
+    font-size:16px;
+    line-height:1.55;
+    letter-spacing:-0.011em;
+    font-feature-settings:"cv05","ss01";
+    -webkit-font-smoothing:antialiased;
+    text-rendering:optimizeLegibility;
+  }
+  .wrap{max-width:var(--maxw);margin:0 auto;padding:0 22px;}
+  .num{font-variant-numeric:tabular-nums;}
+
+  /* ---- top bar ---- */
+  .topbar{
+    border-bottom:1px solid var(--line);
+    background:rgba(255,255,255,.78);
+    backdrop-filter:saturate(180%) blur(14px);
+    -webkit-backdrop-filter:saturate(180%) blur(14px);
+    position:sticky;top:0;z-index:40;
+  }
+  .topbar .wrap{display:flex;align-items:center;justify-content:space-between;height:54px;}
+  .brand{display:flex;align-items:center;gap:9px;font-weight:600;letter-spacing:-0.02em;color:var(--ink);font-size:15px;}
+  .brand .dot{width:9px;height:9px;border-radius:50%;background:var(--accent);box-shadow:0 0 0 4px var(--accent-wash);}
+  .topbar .secure{display:flex;align-items:center;gap:6px;font-size:12.5px;color:var(--muted);letter-spacing:0;}
+  .topbar .secure svg{display:block;}
+
+  /* ---- hero ---- */
+  header.hero{padding:54px 0 8px;}
+  .eyebrow{
+    font-size:11.5px;font-weight:600;text-transform:uppercase;letter-spacing:.12em;
+    color:var(--accent-ink);margin:0 0 18px;
+  }
+  h1{
+    font-size:clamp(28px,6.4vw,40px);
+    line-height:1.07;
+    letter-spacing:-0.035em;
+    font-weight:700;
+    color:var(--ink);
+    margin:0 0 14px;
+    text-wrap:balance;
+  }
+  .lede{font-size:clamp(15.5px,2.4vw,17px);color:var(--muted);max-width:54ch;margin:0 0 22px;letter-spacing:-0.01em;}
+  .ratingrow{display:flex;align-items:center;gap:12px;flex-wrap:wrap;}
+  .stars{color:#f5a623;font-size:15px;letter-spacing:1px;line-height:1;}
+  .rate-meta{font-size:13.5px;color:var(--muted);}
+  .rate-meta b{color:var(--ink);font-weight:600;}
+
+  /* ---- layout grid ---- */
+  .grid{
+    display:grid;grid-template-columns:1fr;gap:34px;
+    padding:30px 0 24px;
+  }
+  @media(min-width:880px){
+    :root{--maxw:1020px;}
+    .grid{grid-template-columns:minmax(0,1fr) 360px;gap:48px;align-items:start;padding:38px 0 40px;}
+  }
+
+  .sec-label{
+    font-size:11.5px;font-weight:600;text-transform:uppercase;letter-spacing:.12em;
+    color:var(--faint);margin:0 0 16px;display:flex;align-items:center;gap:10px;
+  }
+  .sec-label::after{content:"";flex:1;height:1px;background:var(--line);}
+
+  /* ---- tier cards ---- */
+  .tiers{display:flex;flex-direction:column;gap:12px;}
+  .tier{
+    position:relative;display:grid;grid-template-columns:22px 1fr auto;gap:16px;align-items:center;
+    border:1px solid var(--line-strong);border-radius:var(--radius);
+    padding:18px 18px;background:var(--paper);cursor:pointer;
+    transition:border-color .22s ease, background .22s ease, box-shadow .22s ease;
+  }
+  .tier:hover{border-color:#c4c3bf;}
+  .tier.selected{border-color:var(--accent);background:var(--accent-wash);box-shadow:0 0 0 1px var(--accent) inset;}
+  .tier:focus-visible{outline:2px solid var(--accent);outline-offset:3px;}
+  .radio{
+    width:20px;height:20px;border-radius:50%;border:1.5px solid var(--line-strong);
+    display:grid;place-items:center;transition:border-color .2s ease;flex-shrink:0;
+  }
+  .tier.selected .radio{border-color:var(--accent);}
+  .radio::after{content:"";width:10px;height:10px;border-radius:50%;background:var(--accent);transform:scale(0);transition:transform .2s cubic-bezier(.2,.8,.3,1);}
+  .tier.selected .radio::after{transform:scale(1);}
+  .tier-main{min-width:0;}
+  .tier-name{font-weight:600;color:var(--ink);font-size:16px;letter-spacing:-0.018em;}
+  .tier-sub{font-size:13px;color:var(--muted);margin-top:2px;}
+  .tier-perbottle{font-size:12.5px;color:var(--faint);margin-top:4px;}
+  .tier-perbottle b{color:var(--body);font-weight:600;}
+  .tier-price{text-align:right;white-space:nowrap;}
+  .tier-now{font-weight:700;color:var(--ink);font-size:18px;letter-spacing:-0.02em;}
+  .tier-was{font-size:13px;color:var(--faint);text-decoration:line-through;margin-top:1px;}
+  .tier-save{
+    display:inline-block;margin-top:5px;font-size:11px;font-weight:600;color:var(--good);
+    letter-spacing:.01em;
+  }
+  .badge{
+    position:absolute;top:-9px;right:16px;font-size:10px;font-weight:700;text-transform:uppercase;
+    letter-spacing:.09em;padding:4px 9px;border-radius:6px;background:var(--ink);color:#fff;
+  }
+  .badge.value{background:var(--accent);}
+
+  /* ---- gifts ---- */
+  .gifts-head{display:flex;align-items:baseline;justify-content:space-between;gap:10px;flex-wrap:wrap;margin-bottom:14px;}
+  .gifts-head .sec-label{margin:0;}
+  .gifts-tally{font-size:12.5px;color:var(--muted);}
+  .gifts-tally b{color:var(--good);font-weight:600;}
+  .gifts{display:grid;grid-template-columns:1fr 1fr;gap:10px;}
+  @media(max-width:520px){.gifts{grid-template-columns:1fr;}}
+  .gift{
+    display:flex;align-items:center;gap:11px;border:1px solid var(--line);border-radius:11px;
+    padding:12px 13px;background:var(--panel);transition:background .25s ease, border-color .25s ease, opacity .25s ease;
+  }
+  .gift.locked{opacity:.5;}
+  .gift.unlocked{background:#fff;border-color:#d4e3fb;}
+  .gift-ico{font-size:18px;line-height:1;width:24px;text-align:center;flex-shrink:0;}
+  .gift-body{min-width:0;}
+  .gift-name{font-size:13.5px;font-weight:550;color:var(--ink);letter-spacing:-0.01em;}
+  .gift-meta{font-size:11.5px;color:var(--muted);margin-top:1px;}
+  .gift.unlocked .gift-meta{color:var(--accent-ink);font-weight:550;}
+  .gift-state{margin-left:auto;font-size:11px;color:var(--faint);white-space:nowrap;}
+  .gift.unlocked .gift-state{color:var(--good);font-weight:600;}
+
+  /* ---- summary ---- */
+  .summary{
+    border:1px solid var(--line-strong);border-radius:18px;padding:24px 22px 22px;
+    background:var(--paper);box-shadow:var(--shadow);
+  }
+  @media(min-width:880px){.summary{position:sticky;top:78px;}}
+  .summary h2{font-size:13px;font-weight:600;text-transform:uppercase;letter-spacing:.1em;color:var(--faint);margin:0 0 18px;}
+  .line{display:flex;justify-content:space-between;align-items:baseline;gap:14px;font-size:14.5px;padding:7px 0;}
+  .line .lbl{color:var(--body);}
+  .line .lbl small{display:block;color:var(--faint);font-size:12px;font-weight:400;letter-spacing:0;}
+  .line .val{color:var(--ink);font-weight:550;white-space:nowrap;}
+  .line .val.free{color:var(--good);font-weight:600;}
+  .rule{height:1px;background:var(--line);margin:12px 0;}
+  .total{display:flex;justify-content:space-between;align-items:baseline;gap:14px;margin-top:4px;}
+  .total .lbl{font-size:15px;font-weight:600;color:var(--ink);}
+  .total .val{font-size:26px;font-weight:700;color:var(--ink);letter-spacing:-0.03em;}
+  .savebar{
+    margin-top:12px;background:var(--accent-wash);border:1px solid #d4e3fb;border-radius:10px;
+    padding:10px 13px;font-size:13px;color:var(--accent-ink);font-weight:550;text-align:center;letter-spacing:-0.01em;
+  }
+  .cta{
+    margin-top:16px;width:100%;border:0;cursor:pointer;
+    background:var(--ink);color:#fff;font-family:inherit;font-size:15.5px;font-weight:600;letter-spacing:-0.01em;
+    padding:15px 18px;border-radius:12px;
+    display:flex;align-items:center;justify-content:center;gap:8px;
+    transition:transform .15s ease, background .2s ease, box-shadow .2s ease;
+  }
+  .cta:hover{background:#000;box-shadow:0 8px 24px rgba(10,10,11,.18);}
+  .cta:active{transform:translateY(1px) scale(.995);}
+  .cta:focus-visible{outline:2px solid var(--accent);outline-offset:3px;}
+  .cta .arrow{transition:transform .2s ease;}
+  .cta:hover .arrow{transform:translateX(3px);}
+  .guarantee{margin-top:14px;display:flex;align-items:center;gap:9px;font-size:12.5px;color:var(--muted);justify-content:center;text-align:center;letter-spacing:-0.005em;}
+  .guarantee svg{flex-shrink:0;}
+
+  .pays{display:flex;gap:7px;justify-content:center;flex-wrap:wrap;margin-top:16px;padding-top:16px;border-top:1px solid var(--line);}
+  .pay{
+    font-size:9.5px;font-weight:700;letter-spacing:.04em;color:var(--muted);
+    border:1px solid var(--line);border-radius:6px;padding:5px 8px;background:var(--panel);white-space:nowrap;
+  }
+
+  /* ---- trust strip ---- */
+  .trust{border-top:1px solid var(--line);padding:34px 0;}
+  .trust-cols{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;}
+  @media(max-width:640px){.trust-cols{grid-template-columns:1fr;gap:18px;}}
+  .tcard{}
+  .tcard .ico{font-size:20px;line-height:1;}
+  .tcard h3{font-size:14px;font-weight:600;color:var(--ink);margin:10px 0 4px;letter-spacing:-0.015em;}
+  .tcard p{font-size:13px;color:var(--muted);margin:0;letter-spacing:-0.005em;}
+
+  /* ---- testimonial ---- */
+  .quote{border-top:1px solid var(--line);padding:38px 0;}
+  .quote blockquote{
+    margin:0;font-size:clamp(18px,3.2vw,22px);line-height:1.42;color:var(--ink);
+    font-weight:450;letter-spacing:-0.02em;max-width:38ch;text-wrap:balance;
+  }
+  .quote .stars{margin-bottom:16px;}
+  .qmeta{margin-top:18px;display:flex;align-items:center;gap:11px;}
+  .avatar{width:38px;height:38px;border-radius:50%;background:linear-gradient(135deg,#e9eef9,#dfe7f7);display:grid;place-items:center;font-weight:600;color:var(--accent-ink);font-size:14px;}
+  .qmeta .who{font-size:13.5px;}
+  .qmeta .who b{color:var(--ink);font-weight:600;display:block;}
+  .qmeta .who span{color:var(--good);font-size:12px;font-weight:550;}
+
+  /* ---- footer ---- */
+  footer{border-top:1px solid var(--line);padding:26px 0 40px;}
+  footer p{font-size:12.5px;color:var(--faint);margin:0;text-align:center;letter-spacing:-0.005em;}
+  footer a{color:var(--muted);text-decoration:none;border-bottom:1px solid var(--line-strong);}
+  footer a:hover{color:var(--accent);border-color:var(--accent);}
+
+  @media (prefers-reduced-motion: reduce){
+    *{transition:none !important;animation:none !important;}
+  }
+</style>
+</head>
+<body>
+
+  <div class="topbar">
+    <div class="wrap">
+      <div class="brand"><span class="dot" aria-hidden="true"></span>Aura</div>
+      <div class="secure">
+        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+        Secure checkout
+      </div>
+    </div>
+  </div>
+
+  <header class="hero">
+    <div class="wrap">
+      <p class="eyebrow">Daily Renewal Complex</p>
+      <h1>Aura Daily — Skin &amp; Gut Renewal Complex</h1>
+      <p class="lede">One capsule a day for clearer skin and a calmer gut. Clinically-dosed pre + postbiotics, ceramides, and zinc — formulated to work from the inside out.</p>
+      <div class="ratingrow">
+        <span class="stars" aria-hidden="true">★★★★★</span>
+        <span class="rate-meta"><b>4.9</b> · <span class="num">12,418</span> verified reviews</span>
+      </div>
+    </div>
+  </header>
+
+  <main class="wrap">
+    <div class="grid">
+
+      <!-- LEFT: selection -->
+      <section aria-label="Choose your supply">
+        <p class="sec-label">Choose your supply</p>
+        <div class="tiers" id="tiers" role="radiogroup" aria-label="Supply tier">
+
+          <div class="tier" role="radio" tabindex="0" aria-checked="false" data-tier="1">
+            <span class="radio" aria-hidden="true"></span>
+            <span class="tier-main">
+              <span class="tier-name">1-Month Supply</span>
+              <span class="tier-sub">1 bottle · 30 capsules</span>
+              <span class="tier-perbottle"><b class="num">$39.95</b> per bottle</span>
+            </span>
+            <span class="tier-price">
+              <span class="tier-now num">$39.95</span>
+              <span class="tier-was num">$49.95</span>
+              <span class="tier-save">Save 20%</span>
+            </span>
+          </div>
+
+          <div class="tier selected" role="radio" tabindex="0" aria-checked="true" data-tier="3">
+            <span class="badge" aria-hidden="true">Most Popular</span>
+            <span class="radio" aria-hidden="true"></span>
+            <span class="tier-main">
+              <span class="tier-name">3-Month Supply</span>
+              <span class="tier-sub">3 bottles · 90 capsules</span>
+              <span class="tier-perbottle"><b class="num">$26.95</b> per bottle</span>
+            </span>
+            <span class="tier-price">
+              <span class="tier-now num">$80.85</span>
+              <span class="tier-was num">$149.85</span>
+              <span class="tier-save">Save 46%</span>
+            </span>
+          </div>
+
+          <div class="tier" role="radio" tabindex="0" aria-checked="false" data-tier="6">
+            <span class="badge value" aria-hidden="true">Best Value</span>
+            <span class="radio" aria-hidden="true"></span>
+            <span class="tier-main">
+              <span class="tier-name">6-Month Supply</span>
+              <span class="tier-sub">6 bottles · 180 capsules</span>
+              <span class="tier-perbottle"><b class="num">$23.95</b> per bottle</span>
+            </span>
+            <span class="tier-price">
+              <span class="tier-now num">$143.70</span>
+              <span class="tier-was num">$299.70</span>
+              <span class="tier-save">Save 52%</span>
+            </span>
+          </div>
+
+        </div>
+
+        <!-- gifts -->
+        <div style="margin-top:34px;">
+          <div class="gifts-head">
+            <p class="sec-label" style="flex:0 0 auto;">Free gifts</p>
+            <p class="gifts-tally"><b class="num" id="giftTally">$43</b> in gifts unlocked</p>
+          </div>
+          <div class="gifts" id="gifts">
+            <div class="gift" data-req="1" data-value="19">
+              <span class="gift-ico" aria-hidden="true">📘</span>
+              <span class="gift-body">
+                <span class="gift-name">Glow Guide eBook</span>
+                <span class="gift-meta">$19 value</span>
+              </span>
+              <span class="gift-state">—</span>
+            </div>
+            <div class="gift" data-req="3" data-value="9.95">
+              <span class="gift-ico" aria-hidden="true">🚚</span>
+              <span class="gift-body">
+                <span class="gift-name">Priority Shipping</span>
+                <span class="gift-meta">$9.95 value</span>
+              </span>
+              <span class="gift-state">—</span>
+            </div>
+            <div class="gift" data-req="3" data-value="24">
+              <span class="gift-ico" aria-hidden="true">🎁</span>
+              <span class="gift-body">
+                <span class="gift-name">Mystery Gift</span>
+                <span class="gift-meta">$24 value</span>
+              </span>
+              <span class="gift-state">—</span>
+            </div>
+            <div class="gift" data-req="6" data-value="34">
+              <span class="gift-ico" aria-hidden="true">🧴</span>
+              <span class="gift-body">
+                <span class="gift-name">Travel Serum</span>
+                <span class="gift-meta">$34 value</span>
+              </span>
+              <span class="gift-state">—</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- RIGHT: summary -->
+      <aside>
+        <div class="summary">
+          <h2>Order summary</h2>
+          <div class="line">
+            <span class="lbl" id="sumPlan">3-Month Supply<small>3 bottles</small></span>
+            <span class="val num" id="sumPrice">$80.85</span>
+          </div>
+          <div class="line">
+            <span class="lbl">Free gifts <span id="sumGiftCount" style="color:var(--faint);font-size:12px;"></span></span>
+            <span class="val free num" id="sumGifts">+$43 FREE</span>
+          </div>
+          <div class="line">
+            <span class="lbl">Shipping</span>
+            <span class="val free">FREE</span>
+          </div>
+          <div class="rule"></div>
+          <div class="total">
+            <span class="lbl">Total</span>
+            <span class="val num" id="sumTotal">$80.85</span>
+          </div>
+          <div class="savebar" id="saveBar">You save <span class="num">$112.00</span> today</div>
+
+          <button class="cta" id="checkout" type="button">
+            Complete Secure Checkout <span class="arrow" aria-hidden="true">→</span>
+          </button>
+
+          <div class="guarantee">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="M9 12l2 2 4-4"/></svg>
+            60-day money-back guarantee
+          </div>
+
+          <div class="pays" aria-label="Accepted payment methods">
+            <span class="pay">VISA</span>
+            <span class="pay">MASTERCARD</span>
+            <span class="pay">AMEX</span>
+            <span class="pay">PAYPAL</span>
+            <span class="pay">APPLE&nbsp;PAY</span>
+          </div>
+        </div>
+      </aside>
+
+    </div>
+
+    <!-- trust -->
+    <section class="trust" aria-label="Why buy with confidence">
+      <div class="trust-cols">
+        <div class="tcard">
+          <div class="ico" aria-hidden="true">🔒</div>
+          <h3>Encrypted &amp; secure</h3>
+          <p>256-bit SSL checkout. Your details are never stored or shared.</p>
+        </div>
+        <div class="tcard">
+          <div class="ico" aria-hidden="true">🛡️</div>
+          <h3>60-day guarantee</h3>
+          <p>Not feeling the glow? Send it back for a full refund, no questions.</p>
+        </div>
+        <div class="tcard">
+          <div class="ico" aria-hidden="true">🧪</div>
+          <h3>Third-party tested</h3>
+          <p>Every batch verified for purity in a GMP-certified facility.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- testimonial -->
+    <section class="quote" aria-label="Customer review">
+      <span class="stars" aria-hidden="true">★★★★★</span>
+      <blockquote>"By week three my skin had visibly calmed down and my digestion finally felt steady. The only supplement I've actually kept buying."</blockquote>
+      <div class="qmeta">
+        <span class="avatar" aria-hidden="true">RM</span>
+        <span class="who">
+          <b>Rachel M.</b>
+          <span>✓ Verified buyer</span>
+        </span>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="wrap">
+      <p>Built by Umer Afzal · <a href="https://umerdevops.uk" target="_blank" rel="noopener">umerdevops.uk</a> · Demo only — no real payment is processed.</p>
+    </div>
+  </footer>
+
+<script>
+  (function(){
+    "use strict";
+
+    // Tier data: price (now), was, bottles, label
+    var TIERS = {
+      "1": { name:"1-Month Supply", bottles:1, sub:"1 bottle",  now:39.95,  was:49.95  },
+      "3": { name:"3-Month Supply", bottles:3, sub:"3 bottles", now:80.85,  was:149.85 },
+      "6": { name:"6-Month Supply", bottles:6, sub:"6 bottles", now:143.70, was:299.70 }
+    };
+
+    var tierEls   = Array.prototype.slice.call(document.querySelectorAll(".tier"));
+    var giftEls   = Array.prototype.slice.call(document.querySelectorAll(".gift"));
+    var giftTally = document.getElementById("giftTally");
+    var sumPlan   = document.getElementById("sumPlan");
+    var sumPrice  = document.getElementById("sumPrice");
+    var sumGifts  = document.getElementById("sumGifts");
+    var sumGiftCount = document.getElementById("sumGiftCount");
+    var sumTotal  = document.getElementById("sumTotal");
+    var saveBar   = document.getElementById("saveBar");
+    var checkout  = document.getElementById("checkout");
+
+    var current = "3";
+
+    function money(n){
+      // whole-dollar display for tallies, 2dp for prices/totals
+      return "$" + n.toFixed(2);
+    }
+    function moneyShort(n){
+      return "$" + (Math.round(n * 100) / 100).toString().replace(/\.00$/,"");
+    }
+
+    function render(){
+      var t = TIERS[current];
+
+      // tier cards visual state
+      tierEls.forEach(function(el){
+        var sel = el.getAttribute("data-tier") === current;
+        el.classList.toggle("selected", sel);
+        el.setAttribute("aria-checked", sel ? "true" : "false");
+        el.tabIndex = sel ? 0 : -1;
+      });
+
+      // gifts: unlock based on bottle count
+      var giftValue = 0, unlockedCount = 0;
+      giftEls.forEach(function(g){
+        var req = parseInt(g.getAttribute("data-req"), 10);
+        var val = parseFloat(g.getAttribute("data-value"));
+        var meta = g.querySelector(".gift-meta");
+        var state = g.querySelector(".gift-state");
+        var unlocked = t.bottles >= req;
+
+        g.classList.toggle("unlocked", unlocked);
+        g.classList.toggle("locked", !unlocked);
+
+        if(unlocked){
+          giftValue += val;
+          unlockedCount++;
+          meta.textContent = moneyShort(val) + " value — included";
+          state.textContent = "✓ Unlocked";
+        }else{
+          meta.textContent = moneyShort(val) + " value";
+          state.innerHTML = "🔒 " + req + "+";
+        }
+      });
+
+      // tallies + summary
+      giftTally.textContent = moneyShort(giftValue);
+
+      sumPlan.innerHTML = t.name + "<small>" + t.sub + "</small>";
+      sumPrice.textContent = money(t.now);
+
+      sumGifts.textContent = "+" + moneyShort(giftValue) + " FREE";
+      sumGiftCount.textContent = unlockedCount ? "(" + unlockedCount + ")" : "";
+
+      sumTotal.textContent = money(t.now);
+
+      // savings = discount off list price + value of unlocked gifts
+      var savings = (t.was - t.now) + giftValue;
+      saveBar.innerHTML = 'You save <span class="num">' + money(savings) + '</span> today';
+    }
+
+    function select(tier){
+      if(!TIERS[tier]) return;
+      current = tier;
+      render();
+    }
+
+    tierEls.forEach(function(el){
+      el.addEventListener("click", function(){ select(el.getAttribute("data-tier")); });
+      el.addEventListener("keydown", function(e){
+        var idx = tierEls.indexOf(el);
+        if(e.key === "Enter" || e.key === " "){
+          e.preventDefault();
+          select(el.getAttribute("data-tier"));
+        } else if(e.key === "ArrowDown" || e.key === "ArrowRight"){
+          e.preventDefault();
+          var next = tierEls[(idx + 1) % tierEls.length];
+          next.focus(); select(next.getAttribute("data-tier"));
+        } else if(e.key === "ArrowUp" || e.key === "ArrowLeft"){
+          e.preventDefault();
+          var prev = tierEls[(idx - 1 + tierEls.length) % tierEls.length];
+          prev.focus(); select(prev.getAttribute("data-tier"));
+        }
+      });
+    });
+
+    checkout.addEventListener("click", function(){
+      var t = TIERS[current];
+      alert("Demo checkout — no real payment is processed.\n\n" +
+            t.name + "  ·  " + money(t.now) + "\n" +
+            "Free gifts + free shipping included.\n\n" +
+            "Thank you for trying the Aura Daily demo.");
+    });
+
+    render();
+  })();
+</script>
+</body>
+</html>
