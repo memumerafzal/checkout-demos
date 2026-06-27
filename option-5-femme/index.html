@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Aura Women's Daily — Secure Checkout</title>
+<meta name="description" content="Women's hormone balance & glow complex. Choose your supply and unlock free gifts." />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=Nunito+Sans:wght@400;600;700;800&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#fdf4f2; --card:#ffffff; --ink:#3a2a31; --muted:#8c757d;
+    --line:#f1dfdb; --blush:#e08aa0; --berry:#b14a6b; --berry-d:#963c59;
+    --sage:#8aa589; --gold:#c79a4e;
+    --shadow:0 1px 2px rgba(58,42,49,.04),0 10px 30px rgba(177,74,107,.08);
+    --radius:18px;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{font-family:"Nunito Sans",-apple-system,Segoe UI,Roboto,sans-serif;
+    background:radial-gradient(900px 500px at 50% -8%,#fbe7e6 0%,var(--bg) 55%);
+    color:var(--ink);line-height:1.55;-webkit-font-smoothing:antialiased}
+  .serif{font-family:"Fraunces",Georgia,serif}
+  .wrap{max-width:560px;margin:0 auto;padding:0 16px 56px}
+
+  .topbar{background:var(--berry);color:#fff;text-align:center;font-size:13px;font-weight:700;
+    letter-spacing:.02em;padding:9px 12px}
+  .topbar span{opacity:.9;margin:0 7px}
+
+  header{text-align:center;padding:30px 0 16px}
+  .brand{font-size:12px;font-weight:800;letter-spacing:.3em;text-transform:uppercase;color:var(--berry)}
+  h1{font-size:31px;line-height:1.16;margin:12px 0 8px;font-weight:600}
+  .stars{color:var(--gold);font-size:16px;letter-spacing:2px}
+  .rev{color:var(--muted);font-size:13px;margin-left:6px;font-weight:600}
+  .sub{color:var(--muted);font-size:15px;max-width:430px;margin:10px auto 0}
+  .pills{display:flex;gap:8px;justify-content:center;flex-wrap:wrap;margin-top:14px}
+  .pill{font-size:11px;font-weight:700;color:var(--berry-d);background:#fbe7ec;border:1px solid #f3d3dc;
+    border-radius:999px;padding:5px 12px}
+
+  .section-label{font-size:12px;font-weight:800;letter-spacing:.14em;text-transform:uppercase;
+    color:var(--muted);margin:26px 0 12px;text-align:center}
+
+  .tiers{display:flex;flex-direction:column;gap:12px}
+  .tier{position:relative;display:flex;align-items:center;gap:14px;background:var(--card);
+    border:2px solid var(--line);border-radius:var(--radius);padding:18px;cursor:pointer;
+    transition:border-color .15s,box-shadow .15s,transform .05s}
+  .tier:hover{border-color:#eab9c4}
+  .tier.active{border-color:var(--blush);box-shadow:var(--shadow)}
+  .tier:active{transform:scale(.995)}
+  .radio{width:22px;height:22px;border-radius:50%;border:2px solid #e3c7cd;flex-shrink:0;
+    display:grid;place-items:center;transition:border-color .15s}
+  .tier.active .radio{border-color:var(--berry)}
+  .tier.active .radio::after{content:"";width:11px;height:11px;border-radius:50%;background:var(--berry)}
+  .tier-main{flex:1}
+  .tier-name{font-weight:800;font-size:17px}
+  .tier-sub{font-size:13px;color:var(--muted);margin-top:2px}
+  .tier-price{text-align:right}
+  .tier-price .now{font-weight:800;font-size:19px}
+  .tier-price .was{font-size:12px;color:var(--muted);text-decoration:line-through}
+  .tier-price .per{font-size:12px;color:var(--muted)}
+  .badge{position:absolute;top:-11px;left:18px;font-size:10px;font-weight:800;letter-spacing:.07em;
+    padding:4px 11px;border-radius:999px;color:#fff;background:var(--berry)}
+  .badge.gold{background:var(--gold)}
+  .save-pill{display:inline-block;margin-top:6px;font-size:11px;font-weight:800;color:var(--berry-d);
+    background:#fbe7ec;border-radius:999px;padding:2px 10px}
+
+  .gifts-head{display:flex;align-items:baseline;justify-content:space-between;margin:28px 0 6px}
+  .gifts-head h3{font-size:17px;font-weight:700}
+  .gifts-head .val{font-size:13px;font-weight:800;color:var(--berry)}
+  .progress{height:8px;background:#f3dde2;border-radius:999px;overflow:hidden;margin:8px 0 14px}
+  .progress > i{display:block;height:100%;background:linear-gradient(90deg,var(--blush),var(--berry));
+    border-radius:999px;transition:width .35s ease}
+  .gifts{display:grid;grid-template-columns:repeat(4,1fr);gap:10px}
+  .gift{position:relative;background:var(--card);border:1.5px dashed var(--line);border-radius:14px;
+    padding:20px 6px 10px;text-align:center;transition:.18s}
+  .gift.unlocked{border-color:var(--blush);border-style:solid}
+  .gift.locked{opacity:.5}
+  .gift .tag{position:absolute;top:-9px;left:50%;transform:translateX(-50%);font-size:9px;font-weight:800;
+    padding:2px 8px;border-radius:999px;color:#fff;white-space:nowrap}
+  .gift.unlocked .tag{background:var(--berry)}
+  .gift.locked .tag{background:#bda7ad}
+  .gift .ico{font-size:25px;line-height:1}
+  .gift .nm{font-size:10.5px;font-weight:700;margin-top:7px;line-height:1.25}
+  .gift .was{font-size:10px;color:var(--muted);text-decoration:line-through}
+
+  .summary{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);
+    padding:20px;margin-top:26px;box-shadow:var(--shadow)}
+  .row{display:flex;justify-content:space-between;align-items:center;font-size:14px;padding:7px 0}
+  .row.muted{color:var(--muted)}
+  .row .free{color:var(--sage);font-weight:800}
+  .hr{height:1px;background:var(--line);margin:8px 0}
+  .total{display:flex;justify-content:space-between;align-items:baseline;padding-top:6px}
+  .total .lbl{font-weight:800;font-size:16px}
+  .total .amt{font-weight:800;font-size:27px;color:var(--berry-d)}
+  .you-save{text-align:right;font-size:12px;font-weight:800;color:var(--sage);margin-top:2px}
+
+  .cta{display:block;width:100%;border:0;cursor:pointer;margin-top:18px;
+    background:linear-gradient(135deg,var(--blush),var(--berry));color:#fff;font-size:18px;font-weight:800;
+    letter-spacing:.02em;padding:18px;border-radius:999px;box-shadow:0 10px 22px rgba(177,74,107,.3);
+    transition:filter .15s,transform .05s}
+  .cta:hover{filter:brightness(1.05)}
+  .cta:active{transform:translateY(1px)}
+  .securenote{display:flex;align-items:center;justify-content:center;gap:7px;color:var(--muted);
+    font-size:12.5px;margin-top:12px}
+  .pays{display:flex;gap:8px;justify-content:center;align-items:center;margin-top:14px;flex-wrap:wrap}
+  .pay{font-size:10px;font-weight:800;color:#7a6a70;background:#fff;border:1px solid var(--line);
+    border-radius:6px;padding:5px 9px;letter-spacing:.04em}
+
+  .trust{display:flex;gap:12px;justify-content:center;margin-top:26px;flex-wrap:wrap}
+  .tcard{flex:1;min-width:150px;background:var(--card);border:1px solid var(--line);border-radius:14px;
+    padding:14px;text-align:center}
+  .tcard .ti{font-size:22px}
+  .tcard .tt{font-weight:800;font-size:13px;margin-top:6px}
+  .tcard .td{font-size:11.5px;color:var(--muted);margin-top:2px}
+
+  .quote{background:var(--card);border:1px solid var(--line);border-left:3px solid var(--blush);
+    border-radius:14px;padding:18px;margin-top:22px}
+  .quote p{font-style:italic;font-size:15px}
+  .quote .who{font-size:12.5px;color:var(--muted);margin-top:8px;font-style:normal;font-weight:700}
+
+  footer{text-align:center;color:var(--muted);font-size:11.5px;margin-top:30px;line-height:1.7}
+  footer a{color:var(--muted)}
+  .demo-note{text-align:center;font-size:11px;color:#bda7ad;margin-top:18px}
+  @media(max-width:420px){h1{font-size:27px}.gifts{gap:7px}.gift .nm{font-size:9.5px}}
+</style>
+</head>
+<body>
+  <div class="topbar"><span>♀ Made for women</span>•<span>30,000+ happy customers</span>•<span>60-day guarantee</span></div>
+
+  <div class="wrap">
+    <header>
+      <div class="brand">Aura&nbsp;Women's</div>
+      <h1 class="serif">Hormone Balance &amp; Glow Complex</h1>
+      <div><span class="stars">★★★★★</span><span class="rev">4.9 · 14,902 reviews</span></div>
+      <p class="sub">A daily multivitamin + probiotic crafted for women — supporting hormonal balance, steady energy, radiant skin, and gut comfort.</p>
+      <div class="pills">
+        <span class="pill">Hormone support</span><span class="pill">Energy &amp; mood</span>
+        <span class="pill">Skin &amp; hair</span><span class="pill">Gut comfort</span>
+      </div>
+    </header>
+
+    <div class="section-label">1 · Choose your supply</div>
+    <div class="tiers" id="tiers"></div>
+
+    <div class="gifts-head"><h3>🌸 Your free gifts</h3><div class="val" id="giftVal">$0.00 unlocked</div></div>
+    <div class="progress"><i id="bar" style="width:0%"></i></div>
+    <div class="gifts" id="gifts"></div>
+
+    <div class="summary">
+      <div class="section-label" style="margin:0 0 10px;text-align:left">Order summary</div>
+      <div class="row"><span id="sumPlan">3-Month Supply</span><span id="sumPlanPrice">$80.85</span></div>
+      <div class="row muted"><span>Free gifts</span><span class="free" id="sumGifts">+$0.00 FREE</span></div>
+      <div class="row muted"><span>Shipping</span><span class="free">FREE</span></div>
+      <div class="hr"></div>
+      <div class="total"><span class="lbl">Total</span><span class="amt" id="sumTotal">$80.85</span></div>
+      <div class="you-save" id="sumSave">You save $0.00</div>
+      <button class="cta" id="cta" onclick="checkout()">Complete Secure Checkout →</button>
+      <div class="securenote">🔒 256-bit SSL encrypted · Your info is protected</div>
+      <div class="pays"><span class="pay">VISA</span><span class="pay">MASTERCARD</span><span class="pay">AMEX</span><span class="pay">PAYPAL</span><span class="pay">APPLE&nbsp;PAY</span></div>
+    </div>
+
+    <div class="trust">
+      <div class="tcard"><div class="ti">🌿</div><div class="tt">Clean ingredients</div><div class="td">Non-GMO · vegan</div></div>
+      <div class="tcard"><div class="ti">🛡️</div><div class="tt">60-day guarantee</div><div class="td">Love it or full refund</div></div>
+      <div class="tcard"><div class="ti">👩‍⚕️</div><div class="tt">Women-formulated</div><div class="td">3rd-party tested</div></div>
+    </div>
+
+    <div class="quote">
+      <p>“My energy is back, my skin looks brighter, and my cycle feels so much more balanced. This is the first vitamin I’ve actually stuck with.”</p>
+      <div class="who">— Priya R., verified buyer</div>
+    </div>
+
+    <footer>Aura Women's · These statements have not been evaluated by the FDA.<br>
+      <a href="#">Privacy</a> · <a href="#">Terms</a> · <a href="#">Contact</a></footer>
+    <div class="demo-note">Demo checkout — built by Muhammad Umer Afzal. No real payment is processed.</div>
+  </div>
+
+<script>
+  const TIERS=[
+    {id:"1",name:"1-Month Supply",sub:"1 bottle",bottles:1,price:39.95,was:49.95,save:20,badge:null},
+    {id:"3",name:"3-Month Supply",sub:"3 bottles · best value",bottles:3,price:80.85,was:149.85,save:46,badge:"MOST POPULAR",cls:""},
+    {id:"6",name:"6-Month Supply",sub:"6 bottles",bottles:6,price:143.70,was:299.70,save:52,badge:"BIGGEST SAVING",cls:"gold"},
+  ];
+  const GIFTS=[
+    {ico:"📖",name:"Women's Wellness Guide",was:19.0,need:1},
+    {ico:"🚚",name:"Priority Shipping",was:9.95,need:3},
+    {ico:"🌙",name:"Cycle-Sync Mini-Guide",was:24.0,need:3},
+    {ico:"💗",name:"Travel Vitamin Tin",was:34.0,need:6},
+  ];
+  const money=n=>"$"+n.toFixed(2);
+  let sel=TIERS[1];
+  function tiers(){document.getElementById("tiers").innerHTML=TIERS.map(t=>`
+    <div class="tier ${t.id===sel.id?"active":""}" onclick="pick('${t.id}')">
+      ${t.badge?`<span class="badge ${t.cls||""}">${t.badge}</span>`:""}
+      <div class="radio"></div>
+      <div class="tier-main"><div class="tier-name">${t.name}</div>
+        <div class="tier-sub">${t.sub}</div><span class="save-pill">Save ${t.save}%</span></div>
+      <div class="tier-price"><div class="now">${money(t.price)}</div>
+        <div class="was">${money(t.was)}</div><div class="per">${money(t.price/t.bottles)}/bottle</div></div>
+    </div>`).join("")}
+  function gifts(){
+    const v=GIFTS.filter(g=>sel.bottles>=g.need).reduce((s,g)=>s+g.was,0);
+    const tot=GIFTS.reduce((s,g)=>s+g.was,0);
+    document.getElementById("giftVal").textContent=money(v)+" unlocked";
+    document.getElementById("bar").style.width=Math.round(v/tot*100)+"%";
+    document.getElementById("gifts").innerHTML=GIFTS.map(g=>{const on=sel.bottles>=g.need;
+      return `<div class="gift ${on?"unlocked":"locked"}"><span class="tag">${on?"FREE":"🔒 "+g.need+"+"}</span>
+        <div class="ico">${g.ico}</div><div class="nm">${g.name}</div><div class="was">${money(g.was)}</div></div>`}).join("");
+    return v}
+  function summary(v){document.getElementById("sumPlan").textContent=sel.name;
+    document.getElementById("sumPlanPrice").textContent=money(sel.price);
+    document.getElementById("sumGifts").textContent="+"+money(v)+" FREE";
+    document.getElementById("sumTotal").textContent=money(sel.price);
+    document.getElementById("sumSave").textContent="You save "+money((sel.was-sel.price)+v)}
+  function pick(id){sel=TIERS.find(t=>t.id===id);render()}
+  function render(){tiers();summary(gifts())}
+  function checkout(){alert("Demo checkout ✓\n\nPlan: "+sel.name+"\nTotal: "+money(sel.price)+
+    "\n\nIn a live build this would continue to a secure payment / external checkout.")}
+  render();
+</script>
+</body>
+</html>
